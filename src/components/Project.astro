@@ -1,0 +1,106 @@
+---
+import project1image from '../assets/project1.jpg';
+---
+<input type="checkbox" id="toggle-project" hidden>
+    <label for="toggle-project" id="project">
+        <div class="project-inner">
+            <span class="project-title">Click Me</span>
+            <div class="project-details">
+                <span class="project-summary">Quick summary goes here.</span>
+
+            </div>
+        </div>
+    </label>
+<style>
+#project {
+    user-select: none;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/assets/project1image.jpg');
+    color: white;
+    width: clamp(200px, 90%, 2100px);
+    height: 50px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: height 0.3s ease, 
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+#project:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3),
+                -10px -10px 10px white;
+}
+.project-inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    
+}
+
+.project-summary {
+    display: flex;
+    max-height: 0;
+    overflow: visible;
+    opacity: 0;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+
+}
+.project-details {
+    height: 0px;
+    opacity:1;
+    overflow: visible;
+    transition: height 0.3s ease;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    background-color: White;
+    color: #333;
+}
+
+#toggle-project:checked + #project {
+    background-color: black;
+    color: white;
+    width: clamp(200px, 90%, 2100px);
+    height: 200px;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+#toggle-project:checked + #project .project-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    max-height: 200px; 
+    opacity: 1;
+    background-color: White;
+    color: #333;
+    height: 200px;
+}
+
+#toggle-project:checked + #project .project-title {
+    visibility:hidden;
+    height:0;
+}
+
+#toggle-project:checked + #project .project-summary {
+    font-size: 1.2rem;
+    max-height: 200px; 
+    opacity: 1;
+}
+</style>
