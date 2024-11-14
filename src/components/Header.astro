@@ -2,16 +2,80 @@
 
 ---
 
+
 <header class="header">
-    <div class="logo">Logo</div>
-    <div class="center-content">Center Content</div>
-    <button class="header-button">Button</button>
+  <div id="lottie-container"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+  <script>
+    window.onload = function () {
+      // Fetch the JSON file manually
+      fetch('src/assets/data.json')
+        .then(response => response.json())
+        .then(animationData => {
+          // Initialize Lottie with the animationData property
+          const animation = lottie.loadAnimation({
+            container: document.getElementById('lottie-container'), 
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            animationData: animationData // Use animationData instead of path
+          });
+        animation.displaycolor = 'white';
+        let isTopOfPage = window.scrollY === 0;
+        let isMouseOver = false;
+        window.addEventListener('scroll', () => {
+            isTopOfPage = window.scrollY === 0;
+            if (!isTopOfPage && !isMouseOver) {
+              // Play forwards if scrolling and not at the top
+              animation.setDirection(1);
+              animation.setSpeed(2);
+              animation.play();
+            }
+            if (isTopOfPage && !isMouseOver) {
+              // Play forwards if scrolling and not at the top
+              animation.setDirection(-1);
+              animation.setSpeed(2);
+              animation.play();
+            }
+          });
+
+          // Update isMouseOver status on mouseover
+          document.getElementById('lottie-container').addEventListener('mouseover', () => {
+            isMouseOver = true;
+            if (isTopOfPage || !isTopOfPage) {
+              // Play in reverse regardless of top page or not
+              animation.setDirection(-1);
+              animation.setSpeed(2);
+              animation.play();
+            }
+          });
+
+          // Update isMouseOver status on mouseout
+          document.getElementById('lottie-container').addEventListener('mouseout', () => {
+            isMouseOver = false;
+            if (!isTopOfPage) {
+              // Play forwards if not at the top and mouse is not over the container
+              animation.setDirection(1);
+              animation.setSpeed(2);
+              animation.play();
+            }
+          });
+        })
+        .catch(error => console.error("Error loading animation:", error));
+    };
+  </script>
+
+<div class="center-content">Center Content</div>
+<button class="header-button">Button</button>
+
+
 </header>
 
 </html>
 <style>
+
 * {
-  margin: 0;
+  margin: 10px;
   padding: 0;
   box-sizing: border-box;
 }
@@ -20,14 +84,28 @@ body {
   font-family: Arial, sans-serif;
 }
 
+#lottie-container {
+  justify: center;
+  height: 4rem;
+  transition: box-shadow 0.3s ease;
+  border-radius: 4px;
+}
+#lottie-container:hover {
+  cursor: pointer;
+  box-shadow: 4px 4px 4px rgb(0,0,0,0.3),
+            -4px -4px 4px white;
+}
+
 .header {
-    width: 100vw;
+  width: 95vw;
+  height: 5rem;
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #FFF;
-  color: blackx``;
+  padding: 5px;
+  background-color: #f9f9f9;
+  color: black;
   margin: 0px;
   box-shadow: 0px 4px 4px rgb(0,0,0,0.3);
 }
