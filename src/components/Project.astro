@@ -1,27 +1,36 @@
 ---
-import project1image from '../assets/project1.jpg';
+interface Props {
+    projectname: string;
+    tintvalues: string;
+    projectId: string;
+}
+const { projectname, tintvalues, projectId } = Astro.props;
+const imageurl = `src/assets/${projectname}cover.jpg`;
 ---
-<input type="checkbox" id="toggle-project" hidden>
-    <label for="toggle-project" id="project">
-        <div class="project-inner">
-            <span class="project-title">Click Me</span>
-            <div class="project-details">
-                <span class="project-summary">Quick summary goes here.</span>
-
-            </div>
+<input type="checkbox" id={`toggle-project-${projectId}`} hidden>
+<label for={`toggle-project-${projectId}`} class="project" style={`background-image:linear-gradient(rgba${tintvalues}, rgba${tintvalues}),url(${imageurl});`}>
+    <div class="project-inner">
+        <span class="project-title">Click Me</span>
+        <div class="project-details">
+            <span class="project-summary">Quick summary goes here.</span>
         </div>
-    </label>
+    </div>
+</label>
+
 <style>
-#project {
+.project {
+    margin: 1rem;
     user-select: none;
-    overflow: visible;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/assets/project1image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     width: clamp(200px, 90%, 2100px);
-    height: 50px;
+    height: 10rem;
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
@@ -29,7 +38,7 @@ import project1image from '../assets/project1.jpg';
                 background-color 0.3s ease,
                 box-shadow 0.3s ease;
 }
-#project:hover {
+.project:hover {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3),
                 -10px -10px 10px white;
 }
@@ -38,7 +47,6 @@ import project1image from '../assets/project1.jpg';
     justify-content: center;
     width: 100%;
     position: relative;
-    
 }
 
 .project-summary {
@@ -55,52 +63,53 @@ import project1image from '../assets/project1.jpg';
     left: 50%;
     transform: translate(-50%, -50%);
     user-select: none;
-
 }
+
 .project-details {
     height: 0px;
-    opacity:1;
-    overflow: visible;
+    opacity: 1;
+    overflow: hidden;
     transition: height 0.3s ease;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60%;
-    background-color: White;
+    background-color: white;
     color: #333;
 }
 
-#toggle-project:checked + #project {
+input[type="checkbox"]:checked + .project {
     background-color: black;
     color: white;
     width: clamp(200px, 90%, 2100px);
-    height: 200px;
+    height: 30rem;
     flex-direction: column;
     justify-content: center;
     position: relative;
 }
 
-#toggle-project:checked + #project .project-details {
+input[type="checkbox"]:checked + .project .project-details {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60%;
-    max-height: 200px; 
+    max-height: 30rem; 
     opacity: 1;
-    background-color: White;
+    background-color: white;
     color: #333;
-    height: 200px;
+    height: 30rem;
 }
 
-#toggle-project:checked + #project .project-title {
-    visibility:hidden;
-    height:0;
+input[type="checkbox"]:checked + .project .project-title {
+    visibility: hidden;
+    height: 0;
 }
 
-#toggle-project:checked + #project .project-summary {
+input[type="checkbox"]:checked + .project .project-summary {
     font-size: 1.2rem;
     max-height: 200px; 
     opacity: 1;
 }
+
 </style>
