@@ -1,28 +1,121 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Project from '../components/Project.astro';
-import Image from 'astro/components/Image.astro';
-import project1cover from '../assets/project1cover.jpg';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Project from "../components/Project.astro";
+import Image from "astro/components/Image.astro";
+import hero1 from "../assets/hero1.png";
+import hero2 from "../assets/hero2.png";
 ---
+
 <Layout title="HOME">
-	<main style = 'margin-top: 4rem'>
-		<h1>Welcome to <span class="text-gradient">portfolio</span></h1>
-		<p class="instructions">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-		</ul>
-		<Image src={project1cover} alt="hero" width="500" height="500" />
+	<main style="margin-top: 4rem">
+		<section class="header-section">
+			<div class="header-container">
+				<div class="text-container">
+					<h1>Hi, I'm <span class="text-gradient">Cooper</span></h1>
+				</div>
+			</div>
+		</section>
+		<section class = "hero-section">
+			<div><h1>I make <b>software</b> fly</h1></div>
+			<Image src={hero2} alt="hero1" class="heroimage2"/>
+		</section>
+		<Project
+			projectname="project1"
+			tintvalues="(255, 255, 255, 0.1)"
+			projectId="1"
+		/>
+		<Project
+			projectname="project2"
+			tintvalues="(0, 0, 0, 0.7)"
+			projectId="2"
+		/>
+		<Project
+			projectname="project3"
+			tintvalues="(0, 0, 255, 0.7)"
+			projectId="3"
+		/>
 	</main>
-	<Project projectname='project1' tintvalues='(255, 255, 255, 0.1)' projectId="1"></Project>
-	<Project projectname='project2' tintvalues="(0, 0, 0, 0.7)" projectId="2"></Project>
-	<Project projectname='project3' tintvalues="(0, 0, 255, 0.7)" projectId="3"></Project>
 </Layout>
+
+<style>
+Image {
+	width: 100vw;
+	height: auto;
+}
+.floater{
+	text-align: center;
+	color: black; /* Ensure the text is visible over the background */
+	padding: 1rem;
+	background: white; /* Optional: Add a semi-transparent background to improve text readability */
+	border-radius: 1rem;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.hero-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 2rem;
+	
+}
+.heroimage2{
+	border-radius: 1rem;
+	width: 80vw;
+	height: auto;
+}
+.header-section {
+	width: 100vw;
+	height: 30rem;
+	background-image: url("../assets/hero1.png"); /* Set the background image */
+	background-size: cover; /* Cover the entire container */
+	background-position: center; /* Center the image */
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+.header-container {
+	text-align: center;
+	color: black; /* Ensure the text is visible over the background */
+	padding: 2rem;
+	background: white; /* Optional: Add a semi-transparent background to improve text readability */
+	border-radius: 1rem;
+	margin-left: 10vw;
+
+}
+
+.text-container {
+	min-width: 10rem;
+}
+
+h1 {
+	font-size: 5rem; /* Increase the font size */
+	margin: 0px;
+	font-weight: 100;
+}
+
+.text-gradient {
+	background: linear-gradient(
+		90deg,
+		#ff7e5f,
+		#feb47b
+	); /* Apply gradient */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: bold;
+}
+
+.instructions {
+	margin-top: 0;
+}
+</style>
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener("DOMContentLoaded", () => {
 		const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 		checkboxes.forEach((checkbox) => {
-			checkbox.addEventListener('change', () => {
+			checkbox.addEventListener("change", () => {
 				if (checkbox.checked) {
 					// Uncheck all other checkboxes
 					checkboxes.forEach((cb) => {
@@ -33,4 +126,3 @@ import project1cover from '../assets/project1cover.jpg';
 		});
 	});
 </script>
-
