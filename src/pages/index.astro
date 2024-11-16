@@ -2,50 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Project from '../components/Project.astro';
+import Image from 'astro/components/Image.astro';
+import project1cover from '../assets/project1cover.jpg';
 ---
-<Layout title="Welcome to portfolio.">
-	<main>
+<Layout title="HOME">
+	<main style = 'margin-top: 4rem'>
 		<h1>Welcome to <span class="text-gradient">portfolio</span></h1>
 		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</p>
 		</ul>
+		<Image src={project1cover} alt="hero" width="500" height="500" />
 	</main>
 	<Project projectname='project1' tintvalues='(255, 255, 255, 0.1)' projectId="1"></Project>
 	<Project projectname='project2' tintvalues="(0, 0, 0, 0.7)" projectId="2"></Project>
 	<Project projectname='project3' tintvalues="(0, 0, 255, 0.7)" projectId="3"></Project>
-	<h1 style="font-size: 10rem">4\n millino\n iowneof newf
-		weoifnwoenf 
-		weoifnwoenfwenfoi
-		weoifnwoenfoiwnef
-		oiwnef
-		opinwef
-		opinweofnweofnwenfowenfn
-		weoifnwoenfiowenf
-		nwe
-		weoifnwoenfpiwnrgg
-		wr
-		g
-		weoifnwoenfpiwnrgger
-		g
-
-		erg
-		e
-		rg
-		er
-		g
-		erggergerg
-		er
-		g
-
-		erggergerger
-		generatorge
-		rg
-		erg
-		er
-		generatorge
-	</h1>
 </Layout>
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
@@ -61,5 +32,5 @@ import Project from '../components/Project.astro';
 			});
 		});
 	});
-	</script>
+</script>
 

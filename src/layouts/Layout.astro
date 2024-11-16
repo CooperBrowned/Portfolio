@@ -15,7 +15,7 @@ import Header from '../components/Header.astro';
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="generator" content={Astro.generator} />
 	</head>
-	<Header></Header>
+	<Header pagetitle={title}></Header>
 	<body>
 		<slot />
 	</body>
@@ -23,14 +23,14 @@ import Header from '../components/Header.astro';
 <style>
 
 body {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
     font-family: Arial;
-    margin-top: 0px;
+	margin: 0px;
 }
 body::-webkit-scrollbar {
   display:none; /* Width of the scrollbar */

@@ -1,14 +1,16 @@
 ---
-
+interface Props {
+	pagetitle: string;
+}
+const { pagetitle } = Astro.props;
 ---
-
-
 <header class="header">
   <div id="lottie-container"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
   <script>
     window.onload = function () {
       // Fetch the JSON file manually
+      
       fetch('src/assets/data.json')
         .then(response => response.json())
         .then(animationData => {
@@ -20,7 +22,10 @@
             autoplay: false,
             animationData: animationData // Use animationData instead of path
           });
-        animation.displaycolor = 'white';
+          const svgElements = document.querySelectorAll('#lottie-container svg path');
+                svgElements.forEach(element => {
+                  element.style.fill = ''; // Reset to default color
+                });
         let isTopOfPage = window.scrollY === 0;
         let isMouseOver = false;
         window.addEventListener('scroll', () => {
@@ -47,6 +52,8 @@
               animation.setDirection(-1);
               animation.setSpeed(2);
               animation.play();
+              //change the color of it
+
             }
           });
 
@@ -64,9 +71,7 @@
         .catch(error => console.error("Error loading animation:", error));
     };
   </script>
-
-<div class="center-content">Center Content</div>
-<button class="header-button">Button</button>
+  <button class="header-button">Contact Me</button>
 
 
 </header>
@@ -84,54 +89,55 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.header {
+  width: 100vw;
+  height: 3.5rem;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: white;
+  color: black;
+  margin: 0px;
+  margin-top: 0px;
+  border-bottom: 1px solid #b7b7b7;
+}
+
 #lottie-container {
   justify: center;
-  height: 4rem;
+  height: 3.5rem;
+  width: 13rem;
   transition: box-shadow 0.3s ease;
-  border-radius: 4px;
+  border-radius: 1rem;
 }
 #lottie-container:hover {
   cursor: pointer;
-  box-shadow: 4px 4px 4px rgb(0,0,0,0.3),
-            -4px -4px 4px white;
-}
-
-.header {
-  width: 95vw;
-  height: 5rem;
-  display: flex;
-  position: fixed;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  background-color: #f9f9f9;
-  color: black;
-  margin: 0px;
-  box-shadow: 0px 4px 4px rgb(0,0,0,0.3);
-}
-
-.logo {
-  font-size: 1.5em;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1),
+              -3px -3px 3px white;
 }
 
 .center-content {
   flex: 1;
   text-align: center;
   font-size: 1.2em;
+  font-family: Helvetica;
 }
 
 .header-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #4CAF50;
-  color: white;
+  justify: center;
+  height: 3rem;
+  width: 14rem;
+  transition: box-shadow 0.3s ease;
+  border-radius: 1rem;
   border: none;
-  cursor: pointer;
-  border-radius: 4px;
+  background-color: black;
+  color: white;
+  font-size: x-large;
 }
 
 .header-button:hover {
-  background-color: #45a049;
+  cursor: pointer;
 }
 
 </style>
