@@ -4,7 +4,9 @@ import Card from "../components/Card.astro";
 import Project from "../components/Project.astro";
 import Image from "astro/components/Image.astro";
 import hero1 from "../assets/hero1.png";
-import hero2 from "../assets/hero2.png";
+import hero2 from "../assets/hero2.jpg";
+import hero3 from "../assets/hero3.png";
+import hero4 from "../assets/hero4.png";
 ---
 
 <Layout title="HOME">
@@ -17,9 +19,16 @@ import hero2 from "../assets/hero2.png";
 			</div>
 		</section>
 		<section class = "hero-section">
-			<div><h1>I make <b>software</b> fly</h1></div>
+			<div class="intro-text">I'm an aerospace engineering student at the University of Maryland,</div>
+			<div><h2>I make <span class="text-gradient">software</span> fly</h2></div>
+			<div class="image-container">
 			<Image src={hero2} alt="hero1" class="heroimage2"/>
+			<Image src={hero3} alt="hero1" class="heroimage2" style="margin-left:0px; margin-right:0px;"/>
+			<Image src={hero4} alt="hero1" class="heroimage2"/>
+			</div>
 		</section>
+		<section class="project-section">
+		<div><h2><span class="text-gradient" style="font-family:OSWALD, sans-serif">PROJECTS</span></h2></div>
 		<Project
 			projectname="project1"
 			tintvalues="(255, 255, 255, 0.1)"
@@ -35,10 +44,50 @@ import hero2 from "../assets/hero2.png";
 			tintvalues="(0, 0, 255, 0.7)"
 			projectId="3"
 		/>
+	</section>
 	</main>
 </Layout>
 
 <style>
+.project-section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+}
+.intro-text {
+	margin-top: 5vw;
+	text-align: center;
+	width: clamp(0px, 85vw, 85rem);
+	font-size: clamp(0.5rem, 2vw, 2rem);
+}
+h2 {
+	font-size: clamp(0px, 10vw, 10rem);
+	font-weight:100;
+	margin: 0px; /* Remove default margin */
+
+}
+.image-container {
+    display: flex;
+    justify-content: space-between;
+	width: 80vw;
+	padding: 0px;
+	transition: width 0.3s ease;
+  }
+  .image-container:hover {
+    width:100vw;
+  }
+  .image-container img {
+    transition: transform 0.3s ease, flex 0.3s ease;
+    object-fit: cover;
+    width: 20vw;
+    height: min(70vh, 70vw);
+    flex: 1;
+  }
+  .image-container img:hover {
+	flex: 1.4;
+  }
 Image {
 	width: 100vw;
 	height: auto;
@@ -62,18 +111,21 @@ Image {
 }
 .heroimage2{
 	border-radius: 1rem;
-	width: 80vw;
-	height: auto;
+	width: 25vw;
+	height: 50rem;
+	margin: 1rem;
 }
 .header-section {
-	width: 100vw;
-	height: 30rem;
+	height: clamp(0px, 90vh, 100vw);
 	background-image: url("../assets/hero1.png"); /* Set the background image */
 	background-size: cover; /* Cover the entire container */
 	background-position: center; /* Center the image */
 	display: flex;
 	align-items: center;
 	justify-content: left;
+	width: 100vw;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	
 }
 
 .header-container {
@@ -83,15 +135,12 @@ Image {
 	background: white; /* Optional: Add a semi-transparent background to improve text readability */
 	border-radius: 1rem;
 	margin-left: 10vw;
+	margin-right: 50vw;
 
-}
-
-.text-container {
-	min-width: 10rem;
 }
 
 h1 {
-	font-size: 5rem; /* Increase the font size */
+	font-size: clamp(1rem, 7vw, 7rem); /* Increase the font size */
 	margin: 0px;
 	font-weight: 100;
 }
@@ -99,9 +148,9 @@ h1 {
 .text-gradient {
 	background: linear-gradient(
 		90deg,
-		#ff7e5f,
-		#feb47b
-	); /* Apply gradient */
+		#022188,
+		#444dd3
+	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-weight: bold;
@@ -110,6 +159,7 @@ h1 {
 .instructions {
 	margin-top: 0;
 }
+
 </style>
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
