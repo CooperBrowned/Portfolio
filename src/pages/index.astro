@@ -19,6 +19,7 @@ import hero4 from "../assets/hero4.png";
 			</div>
 		</section>
 		<section class = "hero-section">
+			<h3>ABOUT ME</h3>
 			<div class="intro-text">I'm an aerospace engineering student at the University of Maryland,</div>
 			<div><h2>I make <span class="text-gradient">software</span> fly</h2></div>
 			<div class="image-container">
@@ -26,47 +27,86 @@ import hero4 from "../assets/hero4.png";
 			<Image src={hero3} alt="hero1" class="heroimage2" style="margin-left:0px; margin-right:0px;"/>
 			<Image src={hero4} alt="hero1" class="heroimage2"/>
 			</div>
+			<div class="intro-text", style="margin-top: 1rem;">I'm an aerospace engineer at UMD specializing in computing and robotics; I prioritize rapid design, prototyping, and testing of technical solutions utilizing cutting-edge software and hardware. Since building my first quadcopter in sixth grade, I've been dedicated to pushing the boundaries of autonomous vehicle technology. My experiences in academia and internships have refined my expertise in engineering and continually honed my personal ethos of test frequently and iterate more. </div>
 		</section>
 		<section class="project-section">
-		<div><h2><span class="text-gradient" style="font-family:OSWALD, sans-serif">PROJECTS</span></h2></div>
+		<div><h3>PROJECTS</h3></div>
 		<Project
-			projectname="project1"
+			titletext="Project 1 dwqd dasdW"
+			summarytext="This is a summary of project 1"
 			tintvalues="(255, 255, 255, 0.1)"
 			projectId="1"
+			coverurl="src/assets/project1cover.png"
 		/>
 		<Project
-			projectname="project2"
-			tintvalues="(0, 0, 0, 0.7)"
+			titletext="Project 1 ect 1 dwqd dasdW"
+			summarytext="This is a summary of project 1"
+			tintvalues="(0, 0, 0, 0.1)"
 			projectId="2"
+			coverurl="src/assets/project2cover.jpg"
 		/>
 		<Project
-			projectname="project3"
-			tintvalues="(0, 0, 255, 0.7)"
+			titletext="Project 1"
+			summarytext="This is a summary of project 1"
+			tintvalues="(0, 0, 0, 0.2)"
 			projectId="3"
+			coverurl="src/assets/project3cover.png"
+		/>
+		<Project
+			titletext="Project 1"
+			summarytext="This is a summary of project 1"
+			tintvalues="(0, 0, 0, 0.1)"
+			projectId="4"
+			coverurl="src/assets/project4cover.jpg"
+		/>
+		<Project
+			titletext="Project 1"
+			summarytext="This is a summary of project 1"
+			tintvalues="(0, 0, 0, 0.4)"
+			projectId="5"
+			coverurl="src/assets/project5cover.png"
+		/>
+		<Project
+			titletext="Project 1"
+			summarytext="This is a summary of project 1"
+			tintvalues="(255, 255, 255, 0.1)"
+			projectId="6"
+			coverurl="src/assets/project6cover.png"
+		/>
+		<Project
+			titletext="Project 1"
+			summarytext="This is a summary of project 1"
+			tintvalues="(255, 255, 255, 0.2)"
+			projectId="7"
+			coverurl="src/assets/project7cover.png"
 		/>
 	</section>
 	</main>
 </Layout>
-
+<link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
 <style>
 .project-section{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 2rem;
 }
 .intro-text {
-	margin-top: 5vw;
 	text-align: center;
 	width: clamp(0px, 85vw, 85rem);
 	font-size: clamp(0.5rem, 2vw, 2rem);
 }
 h2 {
 	font-size: clamp(0px, 10vw, 10rem);
-	font-weight:100;
+	font-weight: 400;
 	margin: 0px; /* Remove default margin */
-
+}
+h3 {
+	font-size: clamp(0px, 6vw, 6rem);
+	font-weight: Bold;
+	margin: 3vw; /* Remove default margin */
+	font-family: 'Roboto Condensed';
+	border-bottom: 0.7vw solid #333;
 }
 .image-container {
     display: flex;
@@ -94,9 +134,9 @@ Image {
 }
 .floater{
 	text-align: center;
-	color: black; /* Ensure the text is visible over the background */
+	color: #333;
 	padding: 1rem;
-	background: white; /* Optional: Add a semi-transparent background to improve text readability */
+	background: white; 
 	border-radius: 1rem;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
@@ -142,7 +182,7 @@ Image {
 h1 {
 	font-size: clamp(1rem, 7vw, 7rem); /* Increase the font size */
 	margin: 0px;
-	font-weight: 100;
+	font-weight: 400;
 }
 
 .text-gradient {
