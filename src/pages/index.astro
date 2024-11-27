@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Project from "../components/Project.astro";
 import Image from "astro/components/Image.astro";
-import hero1 from "../assets/hero1-highres.png";
-import hero2 from "../assets/hero2.png";
-import hero3 from "../assets/hero3.png";
-import hero4 from "../assets/hero4.png";
+import hero1 from "../assets/Hero_Images/hero1-highres.png";
+import hero2 from "../assets/Hero_Images/hero2.png";
+import hero3 from "../assets/Hero_Images/hero3.png";
+import hero4 from "../assets/Hero_Images/hero4.png";
 ---
 
 <Layout title="HOME">
@@ -32,53 +32,69 @@ import hero4 from "../assets/hero4.png";
 		<section class="project-section">
 		<div><h3>PROJECTS</h3></div>
 		<Project
-			titletext="Project 1 dwqd dasdW"
-			summarytext="This is a summary of project 1"
+			covertext="Autonomous Drone Teaming"
+			titletext="A lightweight, cost-effective autonomous drone under 250 grams with SLAM capabilities"
+			summarytext="I am creating an affordable flying testbed, requiring minimal expertise to build and operate. The sUAS features autonomous flight, the ability to transmit live imagery to a ground station, and the capablity to work with another UAV to distribute tasking and imagery relay."
 			tintvalues="(255, 255, 255, 0.1)"
 			projectId="1"
-			coverurl="src/assets/project1cover.png"
+			coverurl="src/assets/Cover_Images/project1cover.png"
 		/>
 		<Project
-			titletext="Project 1 ect 1 dwqd dasdW"
-			summarytext="This is a summary of project 1"
+			covertext="Carbon Fiber Aerostructures"
+			titletext="Optimizing Carbon Fiber Reinforcement for Durable 3D-Printed UAV Components"
+			summarytext="I am developing a cost-effective and efficient method to reinforce 3D-printed parts with carbon fiber, aiming to create durable components for UAVs mimicking exoskeletons found in nature. Comparative tests with alternative materials like Kevlar and fiberglass are used to determine the optimal reinforcement method."
 			tintvalues="(0, 0, 0, 0.1)"
 			projectId="2"
-			coverurl="src/assets/project2cover.jpg"
+			coverurl="src/assets/Cover_Images/project2cover.jpg"
 		/>
 		<Project
-			titletext="Project 1"
-			summarytext="This is a summary of project 1"
+			covertext="Aerodynamic Guided Parachute"
+			titletext="Guided Robotic Parachute for TRT Competition Payload"
+			summarytext="I am developing a guided parachute system for the Team America Rocketry Challenge (TARC) competition. The system uses a tilted parachute, angular setpoint control, and a GNC algorithm to guide the payload to a target landing zone. The system is designed to extremely robust."
 			tintvalues="(0, 0, 0, 0.2)"
 			projectId="3"
-			coverurl="src/assets/project3cover.png"
+			coverurl="src/assets/Cover_Images/project3cover.png"
 		/>
 		<Project
-			titletext="Project 1"
-			summarytext="This is a summary of project 1"
+			covertext="Rotor Guided Parachute"
+			titletext="Quadcopter-Type Guided Parachute for GNC Testing"
+			summarytext="This is side project for the aerodynamic guided parachute, it employs a more software-simple approach to the problem, using four rotors to guide the parachute. This allows for testing of advanced guidance algorithms while the aerodynamic chute's angular control is still in development."
 			tintvalues="(0, 0, 0, 0.1)"
 			projectId="4"
-			coverurl="src/assets/project4cover.jpg"
+			coverurl="src/assets/Cover_Images/project4cover.jpg"
 		/>
 		<Project
-			titletext="Project 1"
-			summarytext="This is a summary of project 1"
+			covertext="L1 High Power Rocket"
+			titletext="Level 1 Tripoli Rocketry Certification Flight"
+			summarytext="This rocket is a high-power rocket I built with the Terrapin Rocketry Team to achieve my Level 1 Tripoli Rocketry Certification. I used this opprotunity to demonstrate a new piece of CFD software I have been working with that allows for advanced modeling of complex systems without traditional complexity associated with directly solving the navier stokes equations."
 			tintvalues="(0, 0, 0, 0.4)"
 			projectId="5"
-			coverurl="src/assets/project5cover.png"
+			coverurl="src/assets/Cover_Images/project5cover.png"
 		/>
+		
 		<Project
-			titletext="Project 1"
-			summarytext="This is a summary of project 1"
+			covertext="Highest Performing Truss"
+			titletext="Optimizing Truss Design for Maximum Strength-to-Weight Ratio"
+			summarytext="This truss is the final project required by all engineering students at UMD at the end of ENES102. The final outcome of this truss was the highest performing in terms of strength to weight ever seen at the university. I was the team lead and employed traditional engineering pricipals with FEA to optimize the design."
 			tintvalues="(255, 255, 255, 0.1)"
 			projectId="6"
-			coverurl="src/assets/project6cover.png"
+			coverurl="src/assets/Cover_Images/project6cover.jpg"
 		/>
 		<Project
-			titletext="Project 1"
-			summarytext="This is a summary of project 1"
+			covertext="OTV Robot Finalist"
+			titletext="Enes100 Final Project: Data-Sensing Over-Terrain-Vehicle"
+			summarytext="This robot was the final project for my first semester at UMD. The robot was designed to traverse a course and collect data from various sensors. I employed my past experience with robotics and electronics to design and build a robot that tied for second in its division."
 			tintvalues="(255, 255, 255, 0.2)"
 			projectId="7"
-			coverurl="src/assets/project7cover.png"
+			coverurl="src/assets/Cover_Images/project7cover.png"
+		/>
+		<Project
+			covertext="Local AI Chatbot"
+			titletext="Local LLM Chatbot with Image Generation Capablities"
+			summarytext="This project is a modular chatbot capable of generating images and interfacing with users on Discord, all while having the option of being self-hosted. This was achieved through the use of standardized API calls to a vLLM backend for text interpretation and stable diffusion calls when the user requests image generation."
+			tintvalues="(255, 255, 255, 0.2)"
+			projectId="8"
+			coverurl="src/assets/Cover_Images/project8cover.png"
 		/>
 	</section>
 	</main>
@@ -94,9 +110,10 @@ import hero4 from "../assets/hero4.png";
 .intro-text {
 	text-align: center;
 	width: clamp(0px, 85vw, 85rem);
-	font-size: clamp(0.5rem, 2vw, 2rem);
+	font-size: clamp(1rem, 2vw, 2rem);
 }
 h2 {
+	color: Black;
 	font-size: clamp(0px, 10vw, 10rem);
 	font-weight: 400;
 	margin: 0px; /* Remove default margin */
@@ -107,6 +124,8 @@ h3 {
 	margin: 3vw; /* Remove default margin */
 	font-family: 'Roboto Condensed';
 	border-bottom: 0.7vw solid #333;
+	width: 80vw;
+	text-align: left;
 }
 .image-container {
     display: flex;
@@ -157,7 +176,7 @@ Image {
 }
 .header-section {
 	height: clamp(0px, 90vh, 100vw);
-	background-image: url("../assets/hero1-highres.png"); /* Set the background image */
+	background-image: url("../assets/Hero_Images/hero1-highres.png"); /* Set the background image */
 	background-size: cover; /* Cover the entire container */
 	background-position: center; /* Center the image */
 	display: flex;
@@ -165,14 +184,13 @@ Image {
 	justify-content: left;
 	width: 100vw;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-	
 }
 
 .header-container {
 	text-align: center;
 	color: black; /* Ensure the text is visible over the background */
 	padding: 2rem;
-	background: white; /* Optional: Add a semi-transparent background to improve text readability */
+	background: white; 
 	border-radius: 1rem;
 	margin-left: 10vw;
 	margin-right: 50vw;

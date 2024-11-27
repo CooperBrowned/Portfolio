@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import image from "../assets/Cover_Images/project1cover.png"
+import image1 from "../assets/Autonomous_Drone_Teaming/image1.png";
+import image2 from "../assets/Autonomous_Drone_Teaming/image2.png";
+import image3 from "../assets/Autonomous_Drone_Teaming/image3.jpg";
+import { Image } from "astro:assets";
+import "../assets/styles.css";
+---
+<Layout title="Autonomus_Drone_Teaming">
+	<main style="margin-top: 4rem">
+		<section class="header-section">
+			<div class="header-container">
+				<div class="text-container">
+					Autonomus Drone Teaming
+				</div>
+			</div>
+		</section>
+		<div class="section-title"><h3>DESIGN GOALS</h3></div>
+		<section class="bodytext">
+			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
+		</section>
+		<section class="text-beside-image">
+			<Image src={image1} alt="hero1"/>
+			<div><h1>First Attempt</h1><div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div></div>
+		</section>
+		<section class="two-images">
+			<Image src={image3} alt="hero1" style="width:25%"/>
+			<Image src={image2} alt="hero1"  style="width:75%"/>
+		</section>
+		<section class="bodytext">
+			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
+		</section>
+		
+    </main>
+
+</Layout>
+<link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+<style>
+.header-section {
+	height: clamp(0px, 30vh, 100vw);
+	background-image: url("../assets/Cover_Images/project1cover.png");
+	background-size: cover; 
+	background-position: center; /* Center the image */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+</style>

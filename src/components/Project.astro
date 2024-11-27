@@ -5,20 +5,77 @@ interface Props {
     coverurl: string;
     titletext: string;
     summarytext: string;
+    covertext: string;
 }
-const { summarytext, titletext, coverurl, tintvalues, projectId } = Astro.props;
+const { covertext, summarytext, titletext, coverurl, tintvalues, projectId } = Astro.props;
 ---
 <input type="checkbox" id={`toggle-project-${projectId}`} hidden>
 <label for={`toggle-project-${projectId}`} class="project" style={`background-image:linear-gradient(rgba${tintvalues}, rgba${tintvalues}),url(${coverurl});`}>
     <div class="project-inner">
-        <span class="project-title">{titletext}</span>
+        <span class="project-title">{covertext}</span>
         <div class="project-details">
-            <span class="project-summary">{summarytext}</span>
+            <div class="project-title-inner">{titletext}</h1></div>
+            <div class="project-summary">{summarytext}</div>
+            <div style="margin: auto; justify-self: center; align-self: center; display: flex; flex-direction: column; align-items: center"><button class="project-button" id=`button-project-${projectId}` onclick={`window.location.href='/${covertext}'`}>Read More</button></div>
         </div>
     </div>
 </label>
 
 <style>
+.project-button {
+  position: relative;
+  padding: 1rem;
+  border: none;
+  margin: 1rem;
+  font-family: sans-serif;
+  background: linear-gradient(
+    90deg,
+    #000000,
+    #000000
+  );
+  color: white;
+  font-size: 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; 
+}
+
+.project-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #022188,
+    #444dd3
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1; 
+
+}
+
+.project-button:hover::before {
+  opacity: 1;
+}
+
+.project-button:hover {
+  cursor: pointer;
+}
+.project-title-inner {
+    font-size: 2rem;
+    margin: 1rem;
+    color: #333;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
 .project {
     margin: 1rem;
     user-select: none;
@@ -57,11 +114,12 @@ const { summarytext, titletext, coverurl, tintvalues, projectId } = Astro.props;
     display: flex;
     max-height: 0;
     overflow: hidden;
-    opacity: 0;
+
+    
 }
 
 .project-title {
-    font-size: 5vw;
+    font-size: clamp(2rem, 5vw, 4rem);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -70,27 +128,27 @@ const { summarytext, titletext, coverurl, tintvalues, projectId } = Astro.props;
     font-weight: 500;
     text-align: center;
 	color: #333;
-	padding: 1rem;
+	padding: 0.5rem;
     margin: 0px;
 	background: white; 
 	border-radius: 1rem;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                font-size 0.3s ease;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 .project-details {
     height: 0px;
-    opacity: 1;
+    opacity: 0;
     overflow: hidden;
-    transition: height 0.3s ease;
+    transition: height 0.3s ease,
+                opacity 0.3s ease;
     background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60%;
+    align-items: start;
+    justify-content: left;
+    width: 60vw;
     color: #333;
+
 }
 
 input[type="checkbox"]:checked + .project {
@@ -105,28 +163,45 @@ input[type="checkbox"]:checked + .project {
 }
 
 input[type="checkbox"]:checked + .project .project-details {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     width: 60%;
     max-height: 40rem; 
     opacity: 1;
     background-color: white;
     color: #333;
     height: 40rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: left;
+    padding: 1rem;
+    text-align: left;
 }
 
 input[type="checkbox"]:checked + .project .project-title {
-    font-size: 3rem;
-    transform: translate(-50%, -18rem);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
+    opacity: 0;
 }
 
 input[type="checkbox"]:checked + .project .project-summary {
     font-size: 1.2rem;
-    max-height: 200px; 
+    max-height: 30rem; 
     opacity: 1;
-    margin-top: 13rem;
+    margin: 1rem;
+    width: fit-content;
+    height: fit-content;
+    font-size: calc(0.8vw + 0.8vh + 0.5vmin); /* Responsive font size */
+    z-index: 0;
 }
 
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.project-title-inner, .project-summary {
+    width: fit-content;
+    height: fit-content;
+    font-size: calc(1.5vw + 1.5vh + 0.5vmin); /* Responsive font size */
+}
 </style>
