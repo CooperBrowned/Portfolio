@@ -1,16 +1,12 @@
-:root {
-    --aspect-ratio-image1: 1; /* Default value; updated via JavaScript */
-    --aspect-ratio-image2: 1; /* Default value; updated via JavaScript */
-  }
 h1{
     font-size: clamp(1rem, 4vw, 4rem);
     font-weight: Bold;
     margin: 0px;
-    margin-left: 2vw;
 }
 .section-title{
 	text-align: left;
     justify-self: center;
+    margin-top: 1rem;
 }
 .singleimage {
 	display: block;
@@ -18,6 +14,7 @@ h1{
     margin-right: auto;
 	width: 70vw;
 	height: auto;
+    margin-top: 1rem;
 }
 .header-container {
 	font-size: clamp(1rem, 10vw, 5rem);
@@ -34,38 +31,56 @@ h1{
     transition: opacity 0.3s ease;
 }
 .bodytext {
-    font-size: 1.5rem;
+    font-size: clamp(0px, 3vw, 1.5rem);
     font-weight: 400;
     text-align: left;
     color: #333;
-    padding: 0.5rem;
-    margin: 2vw;
     background: white; 
     border-radius: 1rem;
-    width: clamp(0px, 80vw, 80rem);
-    justify-self: center
+    width: clamp(0px, 70vw, 80rem);
+    justify-self: center;
+    margin-top: 1rem;
 }
 
 .two-images{
     display: flex;
     justify-self: center;
-    width: clamp(0px, 80vw, 80rem);
+    justify-content: center;
+    gap: 1rem;
+    width: clamp(0px, 70vw, 80rem);
+    height: auto;
+    margin-top: 1rem;
 }
-
-.two-images img {
-    object-fit: cover;
-    height: 30rem;
-    margin: 1rem;
-    border-radius: 1rem;
-}
-
-.beside-image-text {
-    font-size: 1.5rem;
+.text-below-image{
+    display: flex;
+    justify-content: flex-start; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    flex-direction: column; /* Ensure text is below the image */
+    font-size: 1rem;
     font-weight: 400;
     text-align: left;
     color: #333;
-    margin: 2vw;
-    margin-top: 0.5rem;
+    background: white; 
+    border-radius: 1rem;
+    height: auto;
+}
+.two-images img {
+    object-fit: cover;
+    height: 30vw;
+    width: 100%;
+    border-radius: 1rem;
+    align-self: center;
+    margin: 0px;
+    margin-bottom: 0.5rem;
+}
+
+.beside-image-text {
+    font-size: clamp(0px, 3vw, 1.5rem);
+    font-weight: 400;
+    text-align: left;
+    color: #333;
+    margin: 0vw;
+    margin-top: 1rem;
     background: white; 
     border-radius: 1rem;
     justify-self: center
@@ -74,28 +89,84 @@ h1{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    margin: 2vw;
-    width: clamp(0px, 80vw, 80rem);
+    margin: 0px;
+    width: clamp(0px, 70vw, 80rem);
     justify-self: center;
 }
 
 .text-beside-image img {
-    width: clamp(20%, 50vw, 50rem);
+    width: clamp(20%, 45vw, 50rem);
     height: auto;
 }
 
 .text-beside-image .text {
     border-radius: 1rem;
-    margin: 1rem;
+    margin: 0rem;
 }
 h3 {
-	font-size: clamp(3rem, 6vw, 6rem);
-	font-weight: Bold;
-	margin: 3vw; /* Remove default margin */
+	font-size: clamp(3rem, 5vw, 4rem);
+	font-weight: 500;
+	margin: 0px;
 	font-family: 'Roboto Condensed';
-	border-bottom: 0.7vw solid #333;
-    width: clamp(0px, 80vw, 80rem);
+	border-bottom: clamp(0px, 0.5vw, 0.4rem) solid #333;
+    width: clamp(0px, 70vw, 80rem);
 }
+footer{
+    margin-top: 1rem;
+    border-top: 1px solid #b7b7b7;
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-button {
+    position: relative;
+    padding: 1rem;
+    border: none;
+    margin: 1rem;
+    margin-inline: 5vw;
+    font-family: sans-serif;
+    background: linear-gradient(
+      90deg,
+      #000000,
+      #000000
+    );
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; 
+  }
+  
+  .footer-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      90deg,
+      #022188,
+      #444dd3
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1; 
+  
+  }
+  
+  .footer-button:hover::before {
+    opacity: 1;
+  }
+  
+  .footer-button:hover {
+    cursor: pointer;
+  }
 /* Media query for smaller screens */
 @media (max-width: 80rem) {
     .text-beside-image {
@@ -111,5 +182,27 @@ h3 {
 
     .text-beside-image .text {
         text-align: center;
+    }
+    .two-images {
+        flex-direction: column; /* Stack images vertically */
+        justify-self: center;
+        justify-content: center;
+        height: auto;
+    }
+    .two-images img {
+        height: auto;
+    }
+    .text-below-image{
+        display: flex;
+        justify-content: center; /* Center images horizontally */
+        align-items: center; /* Center images vertically */
+        font-size: 1rem;
+        font-weight: 400;
+        text-align: left;
+        color: #333;
+        background: white; 
+        border-radius: 1rem;
+        height: auto !important;
+        width: clamp(0px, 70vw, 80rem) !important;
     }
 }

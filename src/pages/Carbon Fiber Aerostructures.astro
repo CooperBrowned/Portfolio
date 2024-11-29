@@ -1,9 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project1cover.png"
-import image1 from "../assets/Autonomous_Drone_Teaming/image1.png";
-import image2 from "../assets/Autonomous_Drone_Teaming/image2.png";
-import image3 from "../assets/Autonomous_Drone_Teaming/image3.jpg";
+import image from "../assets/Cover_Images/project2cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
 ---
@@ -12,37 +9,36 @@ import "../assets/styles.css";
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					Autonomus Drone Teaming
+					Carbon Fiber Aerostructures
 				</div>
 			</div>
 		</section>
 		<div class="section-title"><h3>DESIGN GOALS</h3></div>
 		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
+			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
 		</section>
 		<div class="section-title"><h3>OTS DESIGN</h3></div>
 		<section class="text-beside-image">
-			<Image src={image1} alt="hero1"/>
 			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
 		</section>
 		<section class="two-images">
-			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>Electronics used on the first flight</div>
-			<div class="text-below-image" style="width:66%"><Image src={image2} alt="hero1"/>Post-first flight teardown</div>
+
 		</section>
 		<section class="bodytext">
 			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
 		</section>
     </main>
 	<footer>
+        <button class="footer-button" onclick=`window.location.href='/Autonomous Drone Teaming'`>⇦ Previous</button>
 		<button class="footer-button" onclick=`window.location.href='/'`>Home</button>
-		<button class="footer-button" onclick=`window.location.href='/Carbon%20Fiber%20Aerostructures'`>Next ⇨</button>
+		<button class="footer-button" onclick=`window.location.href='/Aerodynamic Guided Parachute'`>Next ⇨</button>
 	</footer>
 </Layout>
 <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project1cover.png");
+	background-image: url("../assets/Cover_Images/project2cover.jpg");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;
