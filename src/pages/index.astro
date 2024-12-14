@@ -7,6 +7,15 @@ import hero1 from "../assets/Hero_Images/hero1-highres.png";
 import hero2 from "../assets/Hero_Images/hero2.png";
 import hero3 from "../assets/Hero_Images/hero3.png";
 import hero4 from "../assets/Hero_Images/hero4.png";
+import cover1 from "../assets/Cover_Images/project1cover.png";
+import cover2 from "../assets/Cover_Images/project2cover.jpg";
+import cover3 from "../assets/Cover_Images/project3cover.png";
+import cover4 from "../assets/Cover_Images/project4cover.jpg";
+import cover5 from "../assets/Cover_Images/project5cover.png";
+import cover6 from "../assets/Cover_Images/project6cover.jpg";
+import cover7 from "../assets/Cover_Images/project7cover.png";
+import cover8 from "../assets/Cover_Images/project8cover.png";
+import cover9 from "../assets/Cover_Images/project9cover.png";
 ---
 
 <Layout title="HOME">
@@ -37,7 +46,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="I am creating an affordable flying testbed, requiring minimal expertise to build and operate. The sUAS features autonomous flight, the ability to transmit live imagery to a ground station, and the capablity to work with another UAV to distribute tasking and imagery relay."
 			tintvalues="(255, 255, 255, 0.1)"
 			projectId="1"
-			coverurl="src/assets/Cover_Images/project1cover.png"
+			coverurl=`${cover1.src}`
 		/>
 		<Project
 			covertext="Carbon Fiber Aerostructures"
@@ -45,7 +54,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="I am developing a cost-effective and efficient method to reinforce 3D-printed parts with carbon fiber, aiming to create durable components for UAVs mimicking exoskeletons found in nature. Comparative tests with alternative materials like Kevlar and fiberglass are used to determine the optimal reinforcement method."
 			tintvalues="(0, 0, 0, 0.1)"
 			projectId="2"
-			coverurl="src/assets/Cover_Images/project2cover.jpg"
+			coverurl=`${cover2.src}`
 		/>
 		<Project
 			covertext="Aerodynamic Guided Parachute"
@@ -53,7 +62,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="I am developing a guided parachute system for the Team America Rocketry Challenge (TARC) competition. The system uses a tilted parachute, angular setpoint control, and a GNC algorithm to guide the payload to a target landing zone. The system is designed to extremely robust."
 			tintvalues="(0, 0, 0, 0.2)"
 			projectId="3"
-			coverurl="src/assets/Cover_Images/project3cover.png"
+			coverurl=`${cover3.src}`
 		/>
 		<Project
 			covertext="Rotor Guided Parachute"
@@ -61,7 +70,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="This is side project for the aerodynamic guided parachute, it employs a more software-simple approach to the problem, using four rotors to guide the parachute. This allows for testing of advanced guidance algorithms while the aerodynamic chute's angular control is still in development."
 			tintvalues="(0, 0, 0, 0.1)"
 			projectId="4"
-			coverurl="src/assets/Cover_Images/project4cover.jpg"
+			coverurl=`${cover4.src}`
 		/>
 		<Project
 			covertext="L1 High Power Rocket"
@@ -69,7 +78,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="This rocket is a high-power rocket I built with the Terrapin Rocketry Team to achieve my Level 1 Tripoli Rocketry Certification. I used this opprotunity to demonstrate a new piece of CFD software I have been working with that allows for advanced modeling of complex systems without traditional complexity associated with directly solving the navier stokes equations."
 			tintvalues="(0, 0, 0, 0.4)"
 			projectId="5"
-			coverurl="src/assets/Cover_Images/project5cover.png"
+			coverurl=`${cover5.src}`
 		/>
 		<Project
 		covertext="Local AI Chatbot"
@@ -77,7 +86,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 		summarytext="This project is a modular chatbot capable of generating images and interfacing with users on Discord, all while having the option of being self-hosted. This was achieved through the use of standardized API calls to a vLLM backend for text interpretation and stable diffusion calls when the user requests image generation."
 		tintvalues="(255, 255, 255, 0.2)"
 		projectId="8"
-		coverurl="src/assets/Cover_Images/project8cover.png"
+		coverurl=`${cover8.src}`
 		/>
 		<Project
 			covertext="Highest Performing Truss"
@@ -85,7 +94,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="This truss is the final project required by all engineering students at UMD at the end of ENES102. The final outcome of this truss was the highest performing in terms of strength to weight ever seen at the university. I was the team lead and employed traditional engineering pricipals with FEA to optimize the design."
 			tintvalues="(255, 255, 255, 0.1)"
 			projectId="6"
-			coverurl="src/assets/Cover_Images/project6cover.jpg"
+			coverurl=`${cover6.src}`
 		/>
 		<Project
 		covertext="Portfolio Website"
@@ -93,7 +102,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 		summarytext="This website was built using Astro and vanilla css. It is designed to be a simple, easy to navigate portfolio that showcases my projects and skills. The website is designed to be easily updated and maintained, with a focus on speed and accessibility."
 		tintvalues="(255, 255, 255, 0.15)"
 		projectId="9"
-		coverurl="src/assets/Cover_Images/project9cover.png"
+		coverurl=`${cover9.src}`
 		/>
 		<Project
 			covertext="OTV Robot Finalist"
@@ -101,7 +110,7 @@ import hero4 from "../assets/Hero_Images/hero4.png";
 			summarytext="This robot was the final project for my first semester at UMD. The robot was designed to traverse a course and collect data from various sensors. I employed my past experience with robotics and electronics to design and build a robot that tied for second in its division."
 			tintvalues="(255, 255, 255, 0.2)"
 			projectId="7"
-			coverurl="src/assets/Cover_Images/project7cover.png"
+			coverurl=`${cover7.src}`
 		/>
 	</section>
 	</main>
@@ -231,9 +240,11 @@ h1 {
 		const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 		checkboxes.forEach((checkbox) => {
 			checkbox.addEventListener("change", () => {
+				// @ts-ignore
 				if (checkbox.checked) {
 					// Uncheck all other checkboxes
 					checkboxes.forEach((cb) => {
+						// @ts-ignore
 						if (cb !== checkbox) cb.checked = false;
 					});
 				}
