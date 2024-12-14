@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Project from "../components/Project.astro";
 import Image from "astro/components/Image.astro";
-import hero1 from "../assets/Hero_Images/hero1-highres.png";
+import hero1 from "../assets/Hero_Images/hero1-highres.jpg";
 import hero2 from "../assets/Hero_Images/hero2.png";
 import hero3 from "../assets/Hero_Images/hero3.png";
 import hero4 from "../assets/Hero_Images/hero4.png";
@@ -32,9 +32,9 @@ import cover9 from "../assets/Cover_Images/project9cover.png";
 			<div class="intro-text">I'm an aerospace engineering student at the University of Maryland,</div>
 			<div><h2>I make <span class="text-gradient">software</span> fly</h2></div>
 			<div class="image-container">
-			<Image src={hero2} alt="hero1" class="heroimage2"/>
-			<Image src={hero3} alt="hero1" class="heroimage2" style="margin-left:0px; margin-right:0px;"/>
-			<Image src={hero4} alt="hero1" class="heroimage2"/>
+			<Image src={hero2} alt="hero1" class="heroimage2" loading="lazy"/>
+			<Image src={hero3} alt="hero1" class="heroimage2" style="margin-left:0px; margin-right:0px;" loading="lazy"/>
+			<Image src={hero4} alt="hero1" class="heroimage2" loading="lazy"/>
 			</div>
 			<div class="intro-text", style="margin-top: 1rem;">I'm an aerospace engineer at UMD specializing in computing and robotics; I prioritize rapid design, prototyping, and testing of technical solutions utilizing cutting-edge software and hardware. Since building my first quadcopter in sixth grade, I've been dedicated to pushing the boundaries of autonomous vehicle technology. My experiences in academia and internships have refined my expertise in engineering and continually honed my personal ethos of test frequently and iterate more. </div>
 		</section>
@@ -192,7 +192,7 @@ Image {
 }
 .header-section {
 	height: clamp(0px, 90vh, 100vw);
-	background-image: url("../assets/Hero_Images/hero1-highres.png"); /* Set the background image */
+	background-image: url("../assets/Hero_Images/hero1-highres.jpg"); /* Set the background image */
 	background-size: cover; /* Cover the entire container */
 	background-position: center; /* Center the image */
 	display: flex;

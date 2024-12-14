@@ -9,7 +9,7 @@ const { pagetitle } = Astro.props;
   <div id="lottie-container"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
   <script>
-    window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
       // Fetch the JSON file manually
       // @ts-ignore
       if (typeof lottie === 'undefined') {
@@ -79,7 +79,7 @@ const { pagetitle } = Astro.props;
         document.getElementById('lottie-container').addEventListener('click', () => {
             window.location.href = '/';
           });
-      };
+      });
     
   </script>
   <div class="button-container">
