@@ -9,13 +9,18 @@ const { pagetitle } = Astro.props;
   <div id="lottie-container"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
   <script>
-    window.onload = function () {
+    document.addEventListener('DOMContentLoaded', function () {
       // Fetch the JSON file manually
-      
-      fetch('src/assets/data.json')
+      // @ts-ignore
+      if (typeof lottie === 'undefined') {
+        console.error('Lottie is not loaded');
+        return;
+      }
+      fetch('/data.json')
         .then(response => response.json())
         .then(animationData => {
           // Initialize Lottie with the animationData property
+          // @ts-ignore
           const animation = lottie.loadAnimation({
             container: document.getElementById('lottie-container'), 
             renderer: 'svg',
@@ -25,6 +30,7 @@ const { pagetitle } = Astro.props;
           });
           const svgElements = document.querySelectorAll('#lottie-container svg path');
                 svgElements.forEach(element => {
+                  // @ts-ignore
                   element.style.fill = ''; // Reset to default color
                 });
         let isTopOfPage = window.scrollY === 0;
@@ -73,7 +79,7 @@ const { pagetitle } = Astro.props;
         document.getElementById('lottie-container').addEventListener('click', () => {
             window.location.href = '/';
           });
-      };
+      });
     
   </script>
   <div class="button-container">
