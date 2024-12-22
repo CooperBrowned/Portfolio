@@ -6,7 +6,43 @@ h1{
 .section-title{
 	text-align: left;
     justify-self: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
+}
+.wrapper{
+    border: 2px solid #b7b7b7;
+    width: clamp(0px, 70vw, 80rem);
+    background: white; 
+    border-radius: 1rem;
+    padding: 1rem;
+    justify-self: center;
+    margin: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.textbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.textbox-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+}
+.textbox-header{
+    font-size: clamp(2rem, 3.5vw, 3rem);
+	font-weight: 500;
+	margin: 0px;
+	font-family: 'Roboto Condensed';
+}
+.textbox-date{
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-weight: 400;
+    text-align: center;
+    color: #7f7f7f;
+    margin: 1rem;
 }
 .singleimage {
 	display: block;
@@ -30,7 +66,7 @@ h1{
     opacity: 1;
     transition: opacity 0.3s ease;
 }
-.bodytext {
+.body-text {
     font-size: clamp(0px, 3vw, 1.5rem);
     font-weight: 400;
     text-align: left;
@@ -53,12 +89,13 @@ h1{
 }
 .text-below-image{
     display: flex;
-    justify-content: flex-start; /* Center images horizontally */
+    justify-content: flex; /* Center images horizontally */
+    text-align: center;
     align-items: center; /* Center images vertically */
     flex-direction: column; /* Ensure text is below the image */
     font-size: 1rem;
     font-weight: 400;
-    text-align: left;
+    text-align: center;
     color: #333;
     background: white; 
     border-radius: 1rem;

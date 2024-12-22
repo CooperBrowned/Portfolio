@@ -1,0 +1,16 @@
+---
+interface Props {
+    bodytext: string;
+    headertext: string;
+    datetext: string;
+}
+const { bodytext, headertext, datetext } = Astro.props;
+
+---
+<section class="textbox">
+    <div class="textbox-header-container">
+        <div class="textbox-header">{ headertext }</div>
+        <div class="textbox-date">{ datetext }</div>
+    </div>
+    { bodytext }
+</section>
