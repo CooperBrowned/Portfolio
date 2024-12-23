@@ -1,10 +1,9 @@
 ---
 interface Props {
-    bodytext: string;
     headertext: string;
     datetext: string;
 }
-const { bodytext, headertext, datetext } = Astro.props;
+const { headertext, datetext } = Astro.props;
 
 ---
 <section class="textbox">
@@ -12,5 +11,4 @@ const { bodytext, headertext, datetext } = Astro.props;
         <div class="textbox-header">{ headertext }</div>
         <div class="textbox-date">{ datetext }</div>
     </div>
-    { bodytext }
 </section>

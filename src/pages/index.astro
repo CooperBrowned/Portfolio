@@ -28,8 +28,7 @@ import cover9 from "../assets/Cover_Images/project9cover.png";
 			</div>
 		</section>
 		<section class = "hero-section">
-			<h3>ABOUT ME</h3>
-			<div class="intro-text">I'm an aerospace engineering student at the University of Maryland,</div>
+			<div class="intro-text" style="margin-top: 1rem">I'm an aerospace engineering student at the University of Maryland,</div>
 			<div><h2>I make <span class="text-gradient">software</span> fly</h2></div>
 			<div class="image-container">
 			<Image src={hero2} alt="hero1" class="heroimage2" loading="lazy"/>
@@ -41,7 +40,7 @@ import cover9 from "../assets/Cover_Images/project9cover.png";
 		<section class="project-section">
 		<div><h3>PROJECTS</h3></div>
 		<Project
-			covertext="Autonomous Drone Teaming"
+			covertext="Autonomous Drone Software"
 			titletext="A lightweight, cost-effective autonomous drone under 250 grams with SLAM capabilities"
 			summarytext="I am creating an affordable flying testbed, requiring minimal expertise to build and operate. The sUAS features autonomous flight, the ability to transmit live imagery to a ground station, and the capablity to work with another UAV to distribute tasking and imagery relay."
 			tintvalues="(255, 255, 255, 0.1)"
@@ -49,7 +48,7 @@ import cover9 from "../assets/Cover_Images/project9cover.png";
 			coverurl=`${cover1.src}`
 		/>
 		<Project
-			covertext="Carbon Fiber Aerostructures"
+			covertext="Invincible Aerostructures"
 			titletext="Optimizing Carbon Fiber Reinforcement for Durable 3D-Printed UAV Components"
 			summarytext="I am developing a cost-effective and efficient method to reinforce 3D-printed parts with carbon fiber, aiming to create durable components for UAVs mimicking exoskeletons found in nature. Comparative tests with alternative materials like Kevlar and fiberglass are used to determine the optimal reinforcement method."
 			tintvalues="(0, 0, 0, 0.1)"
@@ -138,7 +137,7 @@ h3 {
 	font-size: clamp(0px, 6vw, 6rem);
 	font-weight: Bold;
 	margin: 3vw; /* Remove default margin */
-	font-family: 'Roboto Condensed';
+	font-family: 'Roboto Condensed', sans-serif;
 	border-bottom: 0.7vw solid #333;
 	width: 80vw;
 	text-align: left;

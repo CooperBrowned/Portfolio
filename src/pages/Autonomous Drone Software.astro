@@ -18,37 +18,37 @@ import Textbox from "../components/Textbox.astro";
 			</div>
 		</section>
 		<div class="wrapper"><Textbox
-			bodytext="The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distribute tasking and allow for more reliable relaying of imagery to a ground station."
 			headertext="PROJECT OVERVIEW"
 			datetext="12-22-2024"
 		/>
+		<section class="body-text">The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distribute tasking and allow for more reliable relaying of imagery to a ground station.</section>
 		</div>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<Image src={image1} alt="hero1"/>
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly available model provided by Oliver FPV. The model was printed in ABS and assembled with a carbon fiber wing spar to provide rigidity. A Matek f405 FC and recommended powertrain were also used.</div>
-		</section>
+		<div class="wrapper"><Textbox
+			headertext="FIRST AIRFRAME"
+			datetext="8-10-2024"
+		/>
+		<section class="body-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly available model provided by Oliver FPV. The model was printed in ABS and assembled with a carbon fiber wing spar to provide rigidity. A Matek f405 FC and recommended powertrain were also used.</section>
 		<section class="two-images">
-			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>Electronics used on the first flight, battery</div>
+			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>Electronics used on the first flight</div>
 			<div class="text-below-image" style="width:66%"><Image src={image2} alt="hero1"/>Post-first flight teardown</div>
 		</section>
-		<section class="body-text">
-			The first flight of the OTS vehicle was successful, with the vehicle launched by hand and stabilized by the flight controller. The vehicle returned to where it was launched successfully, but due to the poor inter-layer adhesion of the ABS upon landing the wing and fuselage sustained severe damage. This demonstrated the efficacy of the chosen electronics and my ability to fabricate and assemble a flying wing from a given design, but also highlighted the need for a more durable material and fabrication process for the aerostructures.
-		</section>
-		<div class="section-title"><h3>CUSTOM DESIGN</h3></div>
-		<section class="body-text">
-			With the need for a more bespoke solution to the durability problem evident, I designed a larger flying wing from scratch using Fusion360. I 3D printed the wing in Bambu Labs' ASA Aero, then coated with fiberglass and epoxy to vastly increase it's strength.
-		</section>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="CUSTOM DESIGN"
+			datetext="9-12-2024"
+		/>
+		<section class="body-text">With the need for a more bespoke solution to the durability problem evident, I designed a larger flying wing from scratch using Fusion360. I 3D printed the wing in Bambu Labs' ASA Aero, then coated with fiberglass and epoxy to vastly increase it's strength.</section>
 		<section class="two-images">
 			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
 			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>The custom vehicle with fiberglass coating and electronics installed</div>
 			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>The UAV post crash</div>
 		</section>
 		<section class="body-text">Due to an improperly secured battery which fell back during launch, the UAV became unstable and crashed shortly after takeoff.</section>
+		</div>
     </main>
 	<footer>
 		<button class="footer-button" onclick=`window.location.href='/'`>Home</button>
-		<button class="footer-button" onclick=`window.location.href='/Carbon Fiber Aerostructures'`>Next ⇨</button>
+		<button class="footer-button" onclick=`window.location.href='/Invincible Aerostructures'`>Next ⇨</button>
 	</footer>
 </Layout>
 <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
