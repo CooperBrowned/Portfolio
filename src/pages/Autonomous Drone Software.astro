@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import image from "../assets/Cover_Images/project1cover.png"
-import image1 from "../assets/Autonomous_Drone_Teaming/image1.png";
-import image2 from "../assets/Autonomous_Drone_Teaming/image2.png";
-import image3 from "../assets/Autonomous_Drone_Teaming/image3.jpg";
+import image1 from "../assets/Autonomous_Drone_Teaming/first_drone_cad.png";
+import first_drone_electronics from "../assets/Autonomous_Drone_Teaming/first_drone_electronics.jpg";
+import first_drone_crash from "../assets/Autonomous_Drone_Teaming/first_drone_crash.png";
+import second_drone_cad from "../assets/Autonomous_Drone_Teaming/second_drone_cad.png";
+import second_drone_postcrash from "../assets/Autonomous_Drone_Teaming/second_drone_postcrash.png";
 import { Image } from "astro:assets";
 import "../assets/styles.css";
 import Textbox from "../components/Textbox.astro";
@@ -29,19 +31,22 @@ import Textbox from "../components/Textbox.astro";
 		/>
 		<section class="body-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly available model provided by Oliver FPV. The model was printed in ABS and assembled with a carbon fiber wing spar to provide rigidity. A Matek f405 FC and recommended powertrain were also used.</section>
 		<section class="two-images">
-			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>Electronics used on the first flight</div>
-			<div class="text-below-image" style="width:66%"><Image src={image2} alt="hero1"/>Post-first flight teardown</div>
+			<div class="text-below-image" style="width:33%"><Image src={first_drone_electronics} alt="hero1"/>Electronics used on the first flight</div>
+			<div class="text-below-image" style="width:66%"><Image src={first_drone_crash} alt="hero1"/>Post-first flight teardown</div>
 		</section>
 		</div>
+		
 		<div class="wrapper"><Textbox
 			headertext="CUSTOM DESIGN"
 			datetext="9-12-2024"
 		/>
-		<section class="body-text">With the need for a more bespoke solution to the durability problem evident, I designed a larger flying wing from scratch using Fusion360. I 3D printed the wing in Bambu Labs' ASA Aero, then coated with fiberglass and epoxy to vastly increase it's strength.</section>
+		<div class="text-beside-image">
+			<div class="beside-image-text">With the need for a more bespoke solution to the durability problem evident, I designed a larger flying wing from scratch using Fusion360. I 3D printed the wing in Bambu Labs' ASA Aero, then coated with fiberglass and epoxy to vastly increase it's strength.</div>
+			<Image src={second_drone_cad} alt="hero1"/>
+		</div>
 		<section class="two-images">
-			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
-			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>The custom vehicle with fiberglass coating and electronics installed</div>
-			<div class="text-below-image" style="width:33%"><Image src={image3} alt="hero1"/>The UAV post crash</div>
+			<div class="text-below-image" style="width:60%"><Image src={second_drone_cad} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
+			<div class="text-below-image" style="width:40%"><Image src={second_drone_postcrash} alt="hero1"/>The custom vehicle with fiberglass coating and electronics installed</div>
 		</section>
 		<section class="body-text">Due to an improperly secured battery which fell back during launch, the UAV became unstable and crashed shortly after takeoff.</section>
 		</div>
