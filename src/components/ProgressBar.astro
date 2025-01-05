@@ -1,0 +1,62 @@
+---
+interface Props {
+    Progress: string;
+}
+const { Progress } = Astro.props;
+---
+<div class="bar">
+    <div class={`segment segment1 ${Progress === 'Just Started' ? 'active' : Progress === 'Working on it' || Progress === 'Complete' ? 'completed' : 'inactive'}`}>Just Started</div>
+    <div class={`segment segment2 ${Progress === 'Working on it' ? 'active' : Progress === 'Complete' ? 'completed' : 'inactive'}`}>Working on it</div>
+    <div class={`segment segment3 ${Progress === 'Complete' ? 'active' : 'inactive'}`}>Complete</div>
+</div>
+<style>
+.bar {
+    display: flex;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 0.5rem solid darkgrey;
+    align-self: center;
+}
+
+.segment {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.segment1.active {
+    background-color: orange;
+}
+
+.segment1.completed {
+    background-color: orange;
+    opacity: 0.7;
+}
+
+.segment2.active {
+    background-color: yellow;
+    color: black; /* Better contrast on yellow */
+}
+
+.segment2.completed {
+    background-color: yellow;
+    color: black;
+    opacity: 0.7;
+}
+
+.segment3.active {
+    background-color: green;
+}
+
+.inactive {
+    background-color: lightgrey;
+    color: darkgrey;
+}
+</style>

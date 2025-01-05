@@ -9,6 +9,7 @@ import second_drone_postcrash from "../assets/Autonomous_Drone_Teaming/second_dr
 import { Image } from "astro:assets";
 import "../assets/styles.css";
 import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
@@ -24,6 +25,7 @@ import Textbox from "../components/Textbox.astro";
 			datetext="12-22-2024"
 		/>
 		<section class="body-text">The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distribute tasking and allow for more reliable relaying of imagery to a ground station.</section>
+		<ProgressBar Progress="Complete"/>
 		</div>
 		<div class="wrapper"><Textbox
 			headertext="FIRST AIRFRAME"
