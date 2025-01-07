@@ -3,30 +3,35 @@ import Layout from "../layouts/Layout.astro";
 import image from "../assets/Cover_Images/project2cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import flight_plan from "../assets/Aerodynamic_Guided_Parachute/flight_plan.png";
 ---
-<Layout title="Autonomus_Drone_Teaming">
+<Layout title="Aerodynamic Guided Parachute">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					Aerodynmaic
+					Tail Rotor Guided Payload
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
-		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
-		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="9-8-2024"
+		/>
+		<section class="body-text">This is the deployed payload for the Terrapin Rocket Team competition rocket, which competes in the Spaceport America Cup (IREC). The payload must be cubs in dimensions and weigh a minimum of 4 kilograms. Our goals are to deploy a payload with a camera capable of recording the rocket deploying its main chute and to have the payload able to steer itself during descent under the chute.</section>
+		<ProgressBar Progress="Working on it"/>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="FLIGHT PLAN"
+			datetext="10-30-2024"
+		/>
+		<section class="body-text">The payload will be deployed just before the main chute such that it has enough time to get oriented and pointing at the rocket in time to record the main chute deploying.</section>
+		<div class="two-images">
+			<Image style="width:80%; height:auto" src={flight_plan} alt="Flight Plan" class="image"/>
+		</div>
+		
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Invincible Aerostructures'`>⇦ Previous</button>
