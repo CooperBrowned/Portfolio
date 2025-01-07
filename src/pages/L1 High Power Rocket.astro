@@ -10,6 +10,7 @@ import pad from "../assets/L1_High_Power_Rocket/pad.jpg";
 import launch from "../assets/L1_High_Power_Rocket/launch.png";
 import recovery from "../assets/L1_High_Power_Rocket/recovery.jpg";
 import umd_flag from "../assets/L1_High_Power_Rocket/umd_flag.jpg";
+import recovery_close from "../assets/L1_High_Power_Rocket/recovery_close.jpg";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
@@ -50,10 +51,9 @@ import umd_flag from "../assets/L1_High_Power_Rocket/umd_flag.jpg";
 		<div class="two-images">
 		<div class="text-below-image" style="width:100%; height: auto;"><Image style="width:100%; height:auto" src={launch} alt="Launch"/>Launch</div>
 		</div>
-		<div class="text-beside-image">
-			<div class="beside-image-text">Successful Recovery.</div>
-			<Image src={recovery} alt="hero1"/>
-		</div>
+		<div class="two-images">
+			<div class="text-below-image" style="width:50%; height: auto;"><Image style="height: auto" src={recovery} alt="hero1"/>Recovery</div>
+			<div class="text-below-image" style="width:50%; height: auto;"><Image style="height: auto" src={recovery_close} alt="hero1"/>Close-up Post Recovery</div>
 		</div>
     </main>
 	<footer>

@@ -3,30 +3,30 @@ import Layout from "../layouts/Layout.astro";
 import image from "../assets/Cover_Images/project2cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import top_view from "../assets/Highest_Performing_Truss/top_view.jpg";
+import left_view from "../assets/Highest_Performing_Truss/left_view.jpg";
+import right_view from "../assets/Highest_Performing_Truss/right_view.jpg";
+import closeup from "../assets/Highest_Performing_Truss/closeup.jpg";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					rotor
+					ENES102 Truss
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="4-03-2024"
+		/>
+		<section class="body-text">The purpose of this project was to design, analyze, and build a truss following several specific design requirements. This structure was meant to withstand an applied load of 1000 pounds while weighing as little as possible. To achieve this, we designed our own truss and calculated failure modes to optimize weight, removing material where it wasn’t needed. After designing and analyzing the truss, we constructed it and prepared to test it on the designated truss test day. 
 		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
-		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<ProgressBar Progress="Complete"/>
+		</div>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Local AI Chatbot'`>⇦ Previous</button>

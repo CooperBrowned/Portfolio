@@ -1,32 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project2cover.jpg"
+import image from "../assets/Cover_Images/project8cover.png"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import image1 from "../assets/Local_AI_Chatbot/image1.png";
+import image2 from "../assets/Local_AI_Chatbot/image2.png";
+import image3 from "../assets/Local_AI_Chatbot/image3.png";
+import image4 from "../assets/Local_AI_Chatbot/image4.png";
+import image5 from "../assets/Local_AI_Chatbot/image5.png";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					rotor
+					Local AI Chatbot
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="2-22-2023"
+		/>
+		<section class="body-text">The goal of this project is to create a modular chatbot capable of generating images and interfacing with users on Discord, all while having the option of being self-hosted. This was achieved through the use of standardized API calls to a vLLM backend for text interpretation and stable diffusion calls when the user requests image generation.
 		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
-		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<ProgressBar Progress="Complete"/>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="CODE & USER INTERACTION"
+			datetext="2-22-2023"
+		/>
+		<section class="bodytext">All the code for the bot is, of course, open source and available at the <a href='https://github.com/Ravstar225/A.V.A'>github link here</a>. Note this is not the github account I use anymore! This chatbot is especially unique as it uses a smaller LLM preprocessor to decide if it should generate an accompanying image to its text response as opposed to traditional regex.</section>
+		<div class="two-images">
+			<Image style="height: auto" src={image3} alt="hero1"/>
+		</div>
+		<div class="two-images">
+			<div class="text-below-image" style="height: auto; width:33%;"><Image src={image2} alt="hero2"/></div>
+			<div class="text-below-image" style="height: auto; width:33%;"><Image src={image4} alt="hero2"/></div>
+			<div class="text-below-image" style="height: auto; width:33%;"><Image src={image5} alt="hero2"/></div>
+		</div>
+		<div class="two-images">
+			<Image style="height: auto" src={image1} alt="hero1"/>
+		</div>
+		</div>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/L1 High Power Rocket'`>⇦ Previous</button>
@@ -38,7 +56,7 @@ import "../assets/styles.css";
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project2cover.jpg");
+	background-image: url("../assets/Cover_Images/project8cover.png");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;
