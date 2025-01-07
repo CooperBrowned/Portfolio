@@ -3,7 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import image from "../assets/Cover_Images/project2cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
-import first_wing from "../assets/Invincible_Aerostructures/firstwing.png";
+import first_wing_back from "../assets/Invincible_Aerostructures/first_wing_back.jpg";
+import vacuum_bagging from "../assets/Invincible_Aerostructures/vacuum_bagging.jpg";
+import first_wing_side from "../assets/Invincible_Aerostructures/first_wing_side.jpg";
+import second_wing from "../assets/Invincible_Aerostructures/second_wing.jpg";
+import full_drone_closeup from "../assets/Invincible_Aerostructures/full_drone_closeup.jpg";
+import full_drone_fin_jig from "../assets/Invincible_Aerostructures/full_drone_fin_jig.jpg";
+import full_drone_parts from "../assets/Invincible_Aerostructures/full_drone_parts.jpg";
+import ProgressBar from "../components/ProgressBar.astro";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
@@ -20,23 +27,66 @@ import first_wing from "../assets/Invincible_Aerostructures/firstwing.png";
 				<div class="textbox-header">PROJECT OVERVIEW</div>
 				<div class="textbox-date">10-13-2024</div>
 			</div>
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
+			<section class="body-text">The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.</section>
+			<ProgressBar Progress="Working on it"/>
 		</div>
 		<div class = "wrapper">
 		<section class="textbox">
 			<div class="textbox-header-container">
-				<div class="textbox-header">CUSTOM DESIGN</div>
-				<div class="textbox-date">9-12-2024</div>
+				<div class="textbox-header">INITIAL EXPERIMENTS</div>
+				<div class="textbox-date">10-18-2024</div>
+			</div>
+		</section>
+			<div class="text-beside-image">
+				<div class="beside-image-text">I started more or less knowing I would want to use a single layer of carbon fiber, but I'd never fabricated any composites before, so I decided I would start making test parts until I was happy with the results I got to familiarize myself with the process. I ended up printing an airfoil section from Bambu Labs ASA-Aero and coating it with 2K 2x2 twill carbon fiber and Totalboat epoxy. Vacuum bagging was used to create a good surface finish and an ideal resin-to-carbon fiber ratio.
+				</div>
+				<Image src={vacuum_bagging} alt="hero1"/>
+			</div>
+		</div>
+		<div class = "wrapper">
+		<section class="textbox">
+			<div class="textbox-header-container">
+				<div class="textbox-header">FIRST WING RESULTS</div>
+				<div class="textbox-date">10-18-2024</div>
+			</div>
+		</section>
+			<section class="body-text">The first wing I made was a success, but had some very large flaws. The vacuum bagging worked flawlessly to create a very strong and lightweight part, but the surface finish was extremely rough due to the peel ply used. The 3D part didn't have enough infill to resist the forces of the vacuum bag and as a result it warped pretty severely.</section>
+				<section class="two-images">
+				<div class="text-below-image" style="width:50%"><Image src={first_wing_back} alt="hero1"/>First wing attempt top view, the infill pattern is clearly visible which is not good</div>
+				<div class="text-below-image" style="width:50%"><Image src={first_wing_side} alt="hero1"/>First wing attempt side view, notice the unacceptable warping</div>
+			</section>
+		</div>
+		<div class = "wrapper">
+		<section class="textbox">
+			<div class="textbox-header-container">
+				<div class="textbox-header">SECOND WING RESULTS</div>
+				<div class="textbox-date">10-21-2024</div>
 			</div>
 			<div class="text-beside-image">
-				<div class="beside-image-text">I designed a carbon fiber reinforced 3D printed wing using Fusion360. The wing was printed in Bambu Labs' ASA Aero, then coated with fiberglass and epoxy to vastly increase it's strength.</div>
-				<Image src={first_wing} alt="hero1"/>
+				<div class="beside-image-text">
+				The second wing I made was even more of a success. I increased the infill density by 15% which barely increased the weight of the part but drastically increased the resistance to the vacuum bagging process. I also used a different peel ply which left a much smoother surface finish. The part was also post coated and sanded to further improve the surface finish.
+				</div>
+				<Image src={second_wing} alt="hero1"/>
 			</div>
-			<section class="two-images">
-				<div class="text-below-image" style="width:33%"><Image src={first_wing} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
-				<div class="text-below-image" style="width:33%"><Image src={first_wing} alt="hero1"/>First attempt</div>
-				<div class="text-below-image" style="width:33%"><Image src={first_wing} alt="hero1"/>First attempt</div>
+		</section>
 		</div>
+		<div class = "wrapper">
+		<section class="textbox">
+			<div class="textbox-header-container">
+				<div class="textbox-header">FULL AIRFRAME</div>
+				<div class="textbox-date">12-10-2024</div>
+			</div>
+			<section class="body-text">I created a full carbon fiber drone, as designed in <a href='/Autonomous Drone Software'>Autonomous Drone Software</a>. The full airframe is extremely durable and roughly equivalent to the same airframe if it were printed in ABS.</section>
+			<section class="two-images">
+				<div class="text-below-image" style="width:50%"><Image src={full_drone_parts} alt="hero1"/>Parts of the drone during the clear coating step</div>
+				<div class="text-below-image" style="width:50%"><Image src={full_drone_fin_jig} alt="hero1"/>A 3D-printed jig was used to keep the fins stabilized during the joining process</div>
+			</section>
+			<div class="text-beside-image">
+				<div class="beside-image-text">The surface finish is good and I am happy with the parts, but they are a lot of work to make properly. My next steps will be to use a stabilizer in the carbon fiber so I can cut it to shape while it is still a fabric, and the use of a completely smooth peel ply to achieve a good surface finish with no post processing (no sanding or clear coat).</div>
+				<Image src={full_drone_closeup} alt="hero1"/>
+			</div>
+		</div>
+
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Autonomous Drone Software'`>⇦ Previous</button>
