@@ -1,32 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project2cover.jpg"
+import image from "../assets/Cover_Images/project5cover.png"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import cad from "../assets/L1_High_Power_Rocket/cad.png";
+import pad from "../assets/L1_High_Power_Rocket/pad.jpg";
+import launch from "../assets/L1_High_Power_Rocket/launch.png";
+import recovery from "../assets/L1_High_Power_Rocket/recovery.jpg";
+import umd_flag from "../assets/L1_High_Power_Rocket/umd_flag.jpg";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					rotor
+					L1 Rocket Certification
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="10-7-2023"
+		/>
+		<section class="body-text">I built this TRT L1 kit in October of 2023, but due to nearly every launch getting full, I didn't get to launch it until a full year later in September of 2024.
 		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
+		<ProgressBar Progress="Complete"/>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="ROCKET SPECS"
+			datetext="10-7-2023"
+		/>
+		<section class="body-text">This rocket is about as cheap as it can get for a high-power certification flight, but because of its simplicity, there are not many ways in which it can fail. I flew it on an H100 motor to an apogee of ~600 meters. In honor of its cardboard-tan color, I've named it "Mach Burrito," although it's worth noting it will not go near the speed of sound.
 		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<div class="two-images">
+			<div class="text-below-image" style="width:100%; height: auto;"><Image style="height: auto"src={cad} alt="hero1"/>OpenRocket Cad</div>
+		</div>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="LAUNCH DAY"
+			datetext="9-7-2024"
+		/>
+		<section class="body-text">The launch was at the MDRA launch site in Maryland, and the rocket was recovered successfully.</section>
+		<div class="two-images">
+			<div class="text-below-image" style="width:50%; height: auto;"><Image style="height: auto" src={pad} alt="hero1"/>On the Pad</div>
+			<div class="text-below-image" style="width:50%; height: auto;"><Image style="height: auto" src={umd_flag} alt="hero1"/>UMD Flag</div>
+		</div>
+		<div class="two-images">
+		<div class="text-below-image" style="width:100%; height: auto;"><Image style="width:100%; height:auto" src={launch} alt="Launch"/>Launch</div>
+		</div>
+		<div class="text-beside-image">
+			<div class="beside-image-text">Successful Recovery.</div>
+			<Image src={recovery} alt="hero1"/>
+		</div>
+		</div>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Rotor Guided Parachute'`>⇦ Previous</button>
@@ -38,7 +66,7 @@ import "../assets/styles.css";
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project2cover.jpg");
+	background-image: url("../assets/Cover_Images/project5cover.png");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;

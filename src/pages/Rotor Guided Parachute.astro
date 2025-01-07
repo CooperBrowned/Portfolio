@@ -1,32 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project2cover.jpg"
+import image from "../assets/Cover_Images/project4cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import quad_cad from "../assets/Rotor_Guided_Parachute/quad_cad.png";
+import quad_build from "../assets/Rotor_Guided_Parachute/quad_build.jpg";
+import hexacopter from "../assets/Rotor_Guided_Parachute/hexacopter.jpg";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					rotor
+					Quad Guided Chute & Hexacopter
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
-		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
-		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="7-22-2024"
+		/>
+		<section class="body-text">This project serves as a testbed for the tail rotor guided chute for the payload team. It's goal is to simplify the control mechanics to test guidance algorithms while the more complex but more efficient tail-rotor based control system is still in development.</section>
+		<ProgressBar Progress="Complete"/>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="QUAD SYSTEM"
+			datetext="7-26-2024"
+		/>
+		<section class="body-text">The quad system is a simple 3D printed frame with 4 motors, ESCs, and a teensy to test guidance algorithms. It is designed primarily to be dropped from the heavy lift hexacopter.</section>
+		<div class="two-images">
+			<div class="text-below-image" style="width:20%"><Image src={quad_cad} alt="hero1"/>CAD model of the quad system</div>
+			<div class="text-below-image" style="width:30%"><Image src={quad_build} alt="hero1"/>The quad system being built</div>
+			<div class="text-below-image" style="width:50%"><Image src={hexacopter} alt="hero1"/>The hexacopter used to drop the quad system</div>
+		</div>
+		<section class="body-text">The hexacopter succeeded as a drop test platform for payloads, and the guided chute worked somewhat. Development of the rotary guided chute has been discontinued as the team focuses more on the tail guided chute, but the hexacopter will continue to be a launch platform for testing.</section>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Aerodynamic Guided Parachute'`>⇦ Previous</button>
@@ -38,7 +47,7 @@ import "../assets/styles.css";
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project2cover.jpg");
+	background-image: url("../assets/Cover_Images/project4cover.jpg");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;

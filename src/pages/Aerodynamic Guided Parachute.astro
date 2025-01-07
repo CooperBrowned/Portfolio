@@ -1,11 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project2cover.jpg"
+import image from "../assets/Cover_Images/project3cover.png"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
 import Textbox from "../components/Textbox.astro";
 import ProgressBar from "../components/ProgressBar.astro";
 import flight_plan from "../assets/Aerodynamic_Guided_Parachute/flight_plan.png";
+import tadpol from "../assets/Aerodynamic_Guided_Parachute/tadpol.png";
+import terp from "../assets/Aerodynamic_Guided_Parachute/terp.png";
+import l1_test from "../assets/Aerodynamic_Guided_Parachute/l1_test.png";
+import built_payload from "../assets/Aerodynamic_Guided_Parachute/built_payload.png";
 ---
 <Layout title="Aerodynamic Guided Parachute">
 	<main style="margin-top: 4rem">
@@ -31,7 +35,26 @@ import flight_plan from "../assets/Aerodynamic_Guided_Parachute/flight_plan.png"
 		<div class="two-images">
 			<Image style="width:80%; height:auto" src={flight_plan} alt="Flight Plan" class="image"/>
 		</div>
-		
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="2025 PAYLOAD"
+			datetext="10-30-2024"
+		/>
+		The deployable payload needs to be retained in the rocket somehow, this payload bay is designed to hold it until it is time to release, turn on the deployable payload, and help get to the weight requirement.
+		<div class="two-images">
+			<div class="text-below-image"style="width:40%"><Image style="height:auto" src={terp} alt="Payload Bay" class="image"/>Payload Bay</div>
+			<div class="text-below-image"style="width:40%"><Image style="height:auto" src={tadpol} alt="Deployed Payload" class="image"/>Deployed Payload</div>
+		</div> 
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="BUILD AND TESTING"
+			datetext="11-30-2024"
+		/>
+		<section class="body-text">The payload was built and tested in the lab, so far in flight tests we have been unable to demonstrate control. I am currently switching the system to a brushless motor system to improve response time and create better control.</section>
+		<div class="two-images">
+			<div class="text-below-image" style="width:49%"><Image src={built_payload} alt="Built Payload" class="image"/>Built Deployed Payload</div>
+			<div class="text-below-image" style="width:49%"><Image src={l1_test} alt="L1 Test" class="image"/>Flight Test</div>
+		</div>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Invincible Aerostructures'`>⇦ Previous</button>
@@ -43,7 +66,7 @@ import flight_plan from "../assets/Aerodynamic_Guided_Parachute/flight_plan.png"
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project2cover.jpg");
+	background-image: url("../assets/Cover_Images/project3cover.png");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;
