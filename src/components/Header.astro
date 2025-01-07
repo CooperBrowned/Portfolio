@@ -2,7 +2,7 @@
 interface Props {
 	pagetitle: string;
 }
-import resumePdf from '../assets/Resume.pdf';
+import resumePdf from '../Resume.pdf';
 const { pagetitle } = Astro.props;
 ---
 <header class="header">
@@ -88,7 +88,7 @@ const { pagetitle } = Astro.props;
   <script>
     document.getElementById('view-resume').addEventListener('click', () => {
       const link = document.createElement('a');
-      link.href = '/public/resume.pdf';
+      link.href = '../Resume.pdf';
       link.target = '_blank';
       link.click();
     });
