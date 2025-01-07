@@ -6,6 +6,7 @@ import first_drone_electronics from "../assets/Autonomous_Drone_Teaming/first_dr
 import first_drone_crash from "../assets/Autonomous_Drone_Teaming/first_drone_crash.png";
 import second_drone_cad from "../assets/Autonomous_Drone_Teaming/second_drone_cad.png";
 import second_drone_postcrash from "../assets/Autonomous_Drone_Teaming/second_drone_postcrash.png";
+import second_drone_cfd from "../assets/Autonomous_Drone_Teaming/second_drone_cfd.png";
 import { Image } from "astro:assets";
 import "../assets/styles.css";
 import Textbox from "../components/Textbox.astro";
@@ -25,17 +26,7 @@ import ProgressBar from "../components/ProgressBar.astro";
 			datetext="12-22-2024"
 		/>
 		<section class="body-text">The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distribute tasking and allow for more reliable relaying of imagery to a ground station.</section>
-		<ProgressBar Progress="Complete"/>
-		</div>
-		<div class="wrapper"><Textbox
-			headertext="FIRST AIRFRAME"
-			datetext="8-10-2024"
-		/>
-		<section class="body-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly available model provided by Oliver FPV. The model was printed in ABS and assembled with a carbon fiber wing spar to provide rigidity. A Matek f405 FC and recommended powertrain were also used.</section>
-		<section class="two-images">
-			<div class="text-below-image" style="width:33%"><Image src={first_drone_electronics} alt="hero1"/>Electronics used on the first flight</div>
-			<div class="text-below-image" style="width:66%"><Image src={first_drone_crash} alt="hero1"/>Post-first flight teardown</div>
-		</section>
+		<ProgressBar Progress="Working on it"/>
 		</div>
 		
 		<div class="wrapper"><Textbox
@@ -47,10 +38,20 @@ import ProgressBar from "../components/ProgressBar.astro";
 			<Image src={second_drone_cad} alt="hero1"/>
 		</div>
 		<section class="two-images">
-			<div class="text-below-image" style="width:60%"><Image src={second_drone_cad} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
+			<div class="text-below-image" style="width:60%"><Image src={second_drone_cfd} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
 			<div class="text-below-image" style="width:40%"><Image src={second_drone_postcrash} alt="hero1"/>The custom vehicle with fiberglass coating and electronics installed</div>
 		</section>
 		<section class="body-text">Due to an improperly secured battery which fell back during launch, the UAV became unstable and crashed shortly after takeoff.</section>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="FIRST AIRFRAME"
+			datetext="8-10-2024"
+		/>
+		<section class="body-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly available model provided by Oliver FPV. The model was printed in ABS and assembled with a carbon fiber wing spar to provide rigidity. A Matek f405 FC and recommended powertrain were also used.</section>
+		<section class="two-images">
+			<div class="text-below-image" style="width:33%"><Image src={first_drone_electronics} alt="hero1"/>Electronics used on the first flight</div>
+			<div class="text-below-image" style="width:66%"><Image src={first_drone_crash} alt="hero1"/>Post-first flight teardown</div>
+		</section>
 		</div>
     </main>
 	<footer>

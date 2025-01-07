@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import image from "../assets/Cover_Images/project2cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import first_wing from "../assets/Invincible_Aerostructures/firstwing.png";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
@@ -22,7 +23,19 @@ import "../assets/styles.css";
 			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
 		</div>
 		<div class = "wrapper">
-			WIP
+		<section class="textbox">
+			<div class="textbox-header-container">
+				<div class="textbox-header">CUSTOM DESIGN</div>
+				<div class="textbox-date">9-12-2024</div>
+			</div>
+			<div class="text-beside-image">
+				<div class="beside-image-text">I designed a carbon fiber reinforced 3D printed wing using Fusion360. The wing was printed in Bambu Labs' ASA Aero, then coated with fiberglass and epoxy to vastly increase it's strength.</div>
+				<Image src={first_wing} alt="hero1"/>
+			</div>
+			<section class="two-images">
+				<div class="text-below-image" style="width:33%"><Image src={first_wing} alt="hero1"/>Analysis was done using Fusion360 FEA, FluidX3D, and Xflr5</div>
+				<div class="text-below-image" style="width:33%"><Image src={first_wing} alt="hero1"/>First attempt</div>
+				<div class="text-below-image" style="width:33%"><Image src={first_wing} alt="hero1"/>First attempt</div>
 		</div>
     </main>
 	<footer>

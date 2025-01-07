@@ -38,11 +38,11 @@ h1{
 	font-family: 'Roboto Condensed';
 }
 .textbox-date{
-    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.7rem, 2vw, 1rem);
     font-weight: 400;
     text-align: center;
     color: #7f7f7f;
-    margin: 1rem;
+    margin: clamp(0rem, 2vw, 1rem);
 }
 .singleimage {
 	display: block;
