@@ -1,32 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project2cover.jpg"
+import image from "../assets/Cover_Images/project9cover.png"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
 ---
-<Layout title="Autonomus_Drone_Teaming">
+<Layout title="Portfolio Website">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					rotor
+					Portfolio Website
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
-		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
-		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="11-8-2024"
+		/>
+		<section class="body-text">This is my personal portfolio website. I built this website using Astro, a new static site generator. I used Astro to create a fast, modern, and accessible website. I used Astro's component system to create reusable components like text boxes and progress bars. I also used Astro's asset pipeline to import images and styles. </section>
+		<ProgressBar Progress="Working on it"/>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="MORE INFO"
+			datetext="11-8-2024"
+		/>
+		<section class="body-text">This page is WIP until the site is complete!</section>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Highest Performing Truss'`>⇦ Previous</button>
@@ -38,7 +38,7 @@ import "../assets/styles.css";
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project2cover.jpg");
+	background-image: url("../assets/Cover_Images/project9cover.png");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;

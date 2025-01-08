@@ -67,7 +67,7 @@ h1{
     transition: opacity 0.3s ease;
 }
 .body-text {
-    font-size: clamp(0px, 3vw, 1.5rem);
+    font-size: clamp(0px, 3vw, 1.3rem);
     font-weight: 400;
     text-align: left;
     color: #333;

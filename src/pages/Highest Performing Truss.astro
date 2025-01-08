@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import image from "../assets/Cover_Images/project2cover.jpg"
+import image from "../assets/Cover_Images/project6cover.jpg"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
 import Textbox from "../components/Textbox.astro";
@@ -9,6 +9,11 @@ import top_view from "../assets/Highest_Performing_Truss/top_view.jpg";
 import left_view from "../assets/Highest_Performing_Truss/left_view.jpg";
 import right_view from "../assets/Highest_Performing_Truss/right_view.jpg";
 import closeup from "../assets/Highest_Performing_Truss/closeup.jpg";
+import simple from "../assets/Highest_Performing_Truss/simple.png";
+import detailed from "../assets/Highest_Performing_Truss/detailed.png";
+import results from "../assets/Highest_Performing_Truss/results.png";
+import failure_diagram from "../assets/Highest_Performing_Truss/failure_diagram.png";
+import failure from "../assets/Highest_Performing_Truss/failure.png";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
@@ -27,6 +32,43 @@ import closeup from "../assets/Highest_Performing_Truss/closeup.jpg";
 		</section>
 		<ProgressBar Progress="Complete"/>
 		</div>
+		<div class="wrapper"><Textbox
+			headertext="DESIGN PROCESS AND ITERATIONS"
+			datetext="4-03-2024"
+		/>
+		<section class="body-text">Our guiding idea was to be as conservative as possible in our calculations while making our truss as light as possible. Wherever we could, we saved weight while maintaining at least a safety factor of 1, keeping calculations extremely conservative. The first truss was initially composed of two scalene triangles, but we altered it to use isosceles triangles to increase symmetry, ease of manufacturing, and better distribute the load. This choice meant we only had 3 unique beam types instead of 4, and it also aligned the load paths more accurately with the actual load, as our initial design had them somewhat offset. We also adjusted our design to use I-beams for our members rather than standard beams. By using I-beams, we achieved the same support with less weight, as I-beams are nearly ideal in terms of weight-to-buckling resistance due to their higher moment of inertia for the same surface area. Additionally, we maximized the allowable area in contact with the glue, members, and gusset plate, recognizing that increasing contact area with glue would improve the truss's load-bearing capacity. During the design phase, we considered framing the truss with oak and using pine for the internal members to reinforce strength while minimizing weight. However, we changed our initial plan upon realizing that an oak truss would provide an excessively high safety factor while unnecessarily increasing weight, so we decided to build the entire truss out of pine. Finally, we chose not to use I-beams along the entire length of the truss; instead, we limited I-beam cross-sections to 60% of the length, reducing weight without introducing buckling at the joints.</section>
+		<Image style="width:100%; height:auto;" src={simple} alt="Simple Truss Design" class="image"/>
+		<Image style="width:100%; height:auto;" src={detailed} alt="Detailed Truss Design" class="image"/>
+		<section class="body-text">For our safety factor calculations, we first determined how to distribute the load and calculated the stress on each member. We then divided the average yield strength by the stress on each member to determine the safety factor. We also calculated the safety factor for buckling by dividing the max load by the buckling force. We identified members EC and AD as being in compression. Using Euler’s buckling equation with pinned-pinned assumptions, the critical buckling load for both members was found to be 1596.87 lbs. The shear force was calculated as the shear over the cross-sectional area where the members and gusset plates are in contact. Since the gusset plates are on either side of the members, it acts like a double shear pin. Using section cuts and the equilibrium equation, we determined the shear in each member. We predict that the truss will fail at roughly 1150 lbs, failing due to shearing on either member's AD or EC. The estimated weight of the truss is 0.36 lbs, giving us a strength-to-weight ratio of 3194 to 1.</section>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="CONSTRUCTION"
+			datetext="4-20-2024"
+		/>
+		<div class="two-images">
+			<Image style="width:50%; height:auto;" src={top_view} alt="Top View of Truss" class="image"/>
+			<Image style="width:50%; height:auto;" src={closeup} alt="Left View of Truss" class="image"/>
+		</div>
+		<div class="two-images">
+			<Image style="width:50%; height:auto;" src={left_view} alt="Right View of Truss" class="image"/>
+			<Image style="width:50%; height:auto;" src={right_view} alt="Closeup of Truss" class="image"/>
+		</div>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="TESTING"
+			datetext="4-20-2024"
+		/>
+		<div class="text-beside-image">
+			<div class="beside-image-text">Our actual strength-to-weight ratio was 3781. The truss experienced a gusset plate failure at the bottom corner of the gusset place. The gusset plate split was not a glue failure, as we predicted. The reason we didn’t anticipate this was we didn’t analyze the stress in the gusset plates to ensure they were below the failure point of pine, instead focusing on the failure of the glue or members. Also, we used the minimum values for all failure calculations, so we likely experienced favorable conditions in comparison to our calculations; this resulted in our failure happening not where we expected nor at the force expected, but because we did use these minimums, that failure was after we predicted (generally a good thing).</div>
+			<Image src={results} alt="results"/>
+		</div>
+		<Image style="width:100%; height:auto;" src={failure_diagram} alt="Failure Diagram" class="image"/>
+		<div class="text-beside-image">
+			<div class="beside-image-text">Our failure point occurred at a load of 1380 lbf, as opposed to our calculated value of roughly 1150 lbf. This was due to the fact that we used the minimum values in terms of the yielding force for the wood and glue to ensure that we met the required 1000 lbs, even if we got a bad piece of wood or a poor joint. This allowable force was derived from the max shear allowed on the gusset plates. Our actual strength-to-weight ratio was higher than our calculated value of 3194 to 1. This is due to the same reason as our lower force value. The calculated values were used using the minimum strength provided for the wood, and the wood that was actually used may have been stronger.</div>
+			<Image src={failure} alt="results"/>
+		</div>
+		<div class="body-text">Overall, the truss testing proctor reported that using I-beams to reduce weight without reducing failure was extremely successful and resulted in the highest strength-to-weight ratio in UMD history.</div>
+		</div>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Local AI Chatbot'`>⇦ Previous</button>
@@ -38,7 +80,7 @@ import closeup from "../assets/Highest_Performing_Truss/closeup.jpg";
 <style>
 .header-section {
 	height: clamp(0px, 30vh, 100vw);
-	background-image: url("../assets/Cover_Images/project2cover.jpg");
+	background-image: url("../assets/Cover_Images/project6cover.jpg");
 	background-size: cover; 
 	background-position: center; /* Center the image */
 	display: flex;
