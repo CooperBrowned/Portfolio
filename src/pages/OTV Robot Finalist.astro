@@ -3,30 +3,32 @@ import Layout from "../layouts/Layout.astro";
 import image from "../assets/Cover_Images/project7cover.png"
 import { Image } from "astro:assets";
 import "../assets/styles.css";
+import Textbox from "../components/Textbox.astro";
+import ProgressBar from "../components/ProgressBar.astro";
+import robot from "../assets/OTV_Robot_Finalist/robot.png";
 ---
 <Layout title="Autonomus_Drone_Teaming">
 	<main style="margin-top: 4rem">
 		<section class="header-section">
 			<div class="header-container">
 				<div class="text-container">
-					rotor
+					Autonomous OTV Robot
 				</div>
 			</div>
 		</section>
-		<div class="section-title"><h3>DESIGN GOALS</h3></div>
-		<section class="bodytext">
-			The goal of this project is to create a method of quickly and cheaply reinforcing 3D printed parts so they can be used in durable UAVs.
-		</section>
-		<div class="section-title"><h3>OTS DESIGN</h3></div>
-		<section class="text-beside-image">
-			<div class="beside-image-text">As a first attempt to create a 3D printed flying wing, I fabricated of the publicly avaible model provided by Oliver FPV.</div>
-		</section>
-		<section class="two-images">
-
-		</section>
-		<section class="bodytext">
-			The goal of this project is to create a flying testbed that can be easily and cheaply produced with minimal experience. The testbed should be relatively easy to fly, must be autonomous, and must be capable of transmitting imagery back to a ground station. Additionally, it must be able to communicate with a second UAV to distrubute tasking and allow for more relibale relaying of imagery to a ground station.
-		</section>
+		<div class="wrapper"><Textbox
+			headertext="PROJECT OVERVIEW"
+			datetext="10-26-2023"
+		/>
+		<section class="body-text">The mission objectives involve navigating to within 150 mm of the payload, connecting to its output ports, extracting and transmitting a square wave signal’s duty cycle with 5% accuracy, identifying whether the payload base is magnetic, avoiding obstacles, and reaching the destination zone. The mission uses an overhead arm with a probe attached, designed to center over the beacon containing the payload. The arm, mounted on the chassis front, supports a Hall effect sensor for detecting magnetism. It is constructed from 3D-printed parts secured with hot glue and screws, which also attach a linear actuator to stabilize the probe. The probe, also 3D printed, connects to the actuator and features springs to interact with the beacon’s terminals, reading wave signals and working with the Hall effect sensor for magnetism detection. Ultrasonic sensors assist in locating the beacon, and a bump sensor centers the arm over it. The linear actuator lowers the probe into the beacon for data collection, with the system powered by a central battery.</section>
+		<ProgressBar Progress="Complete"/>
+		</div>
+		<div class="wrapper"><Textbox
+			headertext="ROBOT DESIGN"
+			datetext="11-18-2023"
+		/>
+		<Image style="width:100%; height:auto;" src={robot} alt="Robot" class="image"/>
+		<div class="body-text">A much more detailed project report can be found <a href="https://sites.google.com/terpmail.umd.edu/team-parrot">here</a>. The parrot made it to the final round of projects, scoring a near-perfect 180/200, only failing to read the magnetic value. Overall, it tied for second in its division.</div>
     </main>
 	<footer>
         <button class="footer-button" onclick=`window.location.href='/Portfolio Website'`>⇦ Previous</button>
